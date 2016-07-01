@@ -63,7 +63,7 @@ gulp.task('useref',function () {
 gulp.task('browserSync', function () {
   browserSync.init({
     server: {
-      baseDir: 'dist'
+      baseDir: 'app'
     },
   })
 });
@@ -86,10 +86,10 @@ gulp.task('watch', ['useref','css', 'sass', 'html','browserSync'],function() {
 
 gulp.task('chew', function(callback) {
   console.log("Deleting Distro")
-  runSequence('clean:dist',['css','useref','fonts'], callback)
+  runSequence('clean:dist',['css','useref','html','fonts'], callback)
 });
 
 gulp.task('default', function(callback) {
-  runSequence('chew',['css','browserSync','watch'],
+  runSequence('chew',['css','browserSync','html','watch'],
   callback
 )});
