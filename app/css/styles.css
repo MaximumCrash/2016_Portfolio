@@ -1,7 +1,7 @@
 body{
   margin: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: hidden;
+  height: 100%;
 }
 
 .black-bg {
@@ -182,7 +182,7 @@ body{
   opacity: 1;
 }
 
-.portfolio {
+#portfolio {
   display:flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -216,17 +216,17 @@ body{
   z-index:1;
 }
 
-.portfolio .title {
+#portfolio .title {
   font-size: 39px;
   margin-bottom: 5px;
   margin-top: 0;
 }
 
-.portfolio .date {
+#portfolio .date {
   font-size: 25px;
 }
 
-.portfolio .text {
+#portfolio .text {
   font-size: 28px;
   margin-top: 31%;
 }
@@ -647,4 +647,20 @@ transition: all .2s;
 }
 ::-webkit-scrollbar-thumb:window-inactive {
     background: hsla(0, 0%, 100%, .5)
+}
+
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+}
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.swipe-wrap > div {
+  float:left;
+  width:100%;
+  position: relative;
+  overflow: hidden;
 }
