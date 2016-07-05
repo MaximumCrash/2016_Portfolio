@@ -1,70 +1,179 @@
 {
-	"page":[
+	"portfolio":[
 		{
-			"name" : "Home",
-			"sort" : ["All","Games","Web","UI","Branding","Music"]
+			"type" : "games desktop",
+			"title" : "Genesis",
+			"date" : "Apr 2013",
+			"text" : "",
+			"distro" : "",
+			"role": "Developer",
+			"released" : "TBA",
+			"publisher" : "",
+			"about" : "",
+			"blurb" : [""],
+			"checkout" : "Paracentric"
 		},
 		{
-			"name" : "About",
-			"pic" : "",
-			"content": "",
-			"links":{
-				"prolink":[
-					{
-						"text":"",
-						"url":""
-					}
-				],
-				"social":[
-					{
-						"pic" : "",
-						"url" : ""
-					}
-				]
-			}
+			"type" : "music",
+			"title" : "Ruby Version",
+			"date" : "Feb 2013",
+			"text" : "My first chiptune mixtape.",
+			"distro" : "bandcamp",
+			"role": "Composer",
+			"released" : "Feburary 2, 2013",
+			"publisher" : "Maximum Crash",
+			"about" : "",
+			"blurb" : [""],
+			"checkout" : "ChexMix LP"
 		},
 		{
-			"name" : "Lab",
-			"url" : "maximumcrash.com"
+			"type" : "music",
+			"title" : "Results of My:",
+			"date" : "May 2013",
+			"text" : "A collection of recordings experessing my effects on myself, others and the environment.",
+			"distro" : "bandcamp",
+			"role": "Composer",
+			"released" : "May 11, 2013",
+			"publisher" : "Maximum Crash",
+			"about" : "",
+			"blurb" : [""],
+			"checkout" : "ChexMix LP"
+		},
+		{
+			"type": "desktop games music",
+			"title": "Paracentric",
+			"date":"Oct 2013",
+			"text": "A surreal horror RPG made in 24 hours.",
+			"awardwhere":"Becker College 24 Hour Game Jam",
+			"awardwhat":"2nd Place",
+			"distro" : "gamejolt",
+			"role": "Programmer, Artist, Musician",
+			"released" : "Feburary 2, 2013",
+			"publisher" : "DreamMach",
+			"about" : "",
+			"blurb" : [""],
+			"checkout" : "F Mode"
+		},
+		{
+			"type" : "games desktop",
+			"title" : "MW Classic",
+			"date" : "Nov 2013",
+			"text" : "Prototype abstract platforming at it's finest.",
+			"distro" : "",
+			"role": "Developer",
+			"released" : "TBA",
+			"publisher" : "",
+			"about" : "",
+			"blurb" : [""],
+			"checkout" : "Starlot Derby"
+		},
+		{
+			"type" : "music",
+			"title":  "ChexMix LP",
+			"date" : "Dec 2013",
+			"text" : "An experimental compilation of experience, influence, and inspiration.",
+			"distro" : "bandcamp",
+			"role": "Composer",
+			"released" : "December 5, 2013",
+			"publisher" : "Maximum Crash",
+			"about" : "",
+			"blurb" : [""],
+			"checkout" : "Some Place, Some Where"
+		},
+		{
+			"type": "games music desktop",
+			"title" : "RocMoto",
+			"date" : "Dec 2013",
+			"text" : "Aggressive shoot-em-up action.",
+			"distro" : "",
+			"role": "Developer",
+			"released" : "TBA",
+			"publisher" : "",
+			"about" : "",
+			"blurb" : [""],
+			"checkout" : "F Mode"
+		},
+		{
+			"type": "mobile games desktop",
+			"title" : "F Mode",
+			"date" : "Oct 2014",
+			"text" : "A breakneck endless runner.",
+			"distro" : "appstore,googleplay,gamejolt",
+			"role": "Developer/Publisher",
+			"released" : "October 20, 2014",
+			"publisher" : "Maximum Crash",
+			"about" : "",
+			"blurb" : [""],
+			"checkout" : "Starlot Derby"
+		},
+		{
+			"type" : "music",
+			"title" : "Some Place, Some Where",
+			"date" : "Dec 2014",
+			"text" : "An experiment with looping game soundtracks.",
+			"distro" : "bandcamp",
+			"role": "Composer",
+			"released" : "December 23, 2014",
+			"publisher" : "Maximum Crash",
+			"about" : "",
+			"blurb" : [""],
+			"checkout" : "Results of My:"
+		},
+		{
+			"type" : "mobile games music",
+			"title" : "Starlot Derby",
+			"date" : "Apr 2015",
+			"text" : "The slickest intergalactic baseball game this side of the universe.",
+			"awardwhere" : "Mass DiGI Game Challenge",
+			"awardwhat" : "Best College Entertainment Game",
+			"distro" : "googleplay",
+			"role": "Developer/Publisher",
+			"released" : "April 1, 2015",
+			"publisher" : "Maximum Crash",
+			"about" : "",
+			"blurb" : [""],
+			"checkout" : "Bravehearts Derby"
+		},
+		{
+			"type" : "mobile games",
+			"title" : "Hibachi Hero",
+			"date" : "Dec 2015",
+			"text" : "A fast-paced first person food shooter.",
+			"distro" : "appstore,googleplay",
+			"role": "Lead Designer/Tools Programmer",
+			"released" : "December 16, 2013",
+			"publisher" : "Thumbspire",
+			"about" : "",
+			"blurb" : [""],
+			"checkout" : "F Mode"
+		},
+		{
+			"type" : "mobile games",
+			"title" : "Bravehearts Derby",
+			"date" : "Mar 2016",
+			"text" : "The Worcester Bravehears official app.",
+			"distro" : "appstore,googleplay",
+			"role": "Developer",
+			"released" : "March 21, 2016",
+			"publisher" : "Maximum Crash",
+			"about" : "",
+			"blurb" : [""],
+			"checkout" : ""
+		},
+		{
+			"type" : "web",
+			"title" : "The Boston Massacre",
+			"date" : "2015-ongoing",
+			"text" : "Proving critical learning with data.",
+			"distro" : "website",
+			"role": "Designer/Developer",
+			"released" : "TBA",
+			"publisher" : "Victory Productions",
+			"about" : "",
+			"blurb" : [""],
+			"checkout" : ""
 		}
-
 	],
-	"funfact":["I run Maximum Crash!"],
-	"items":[
-		{
-			"name":"Starlot Derby",
-			"type": ["Game","UI","Music"],
-			"year":"2015",
-			"setcolor":"",
-			"content": {
-				"tagline":"The slickest intergalactic baseball game, this side of the universe.",
-				"cardimg":"",
-				"projectimg":"",
-				"icon":"",
-				"avlinks":[
-					{
-						"pic" : "",
-						"url" : ""
-					}
-				],
-				"award":{
-					"where":"Mass Digi Game Challenge (2015)",
-					"what":"Best College Beta Entertainment Game"
-				},
-				"info" : {
-					"role" : "Developer/Publisher",
-					"released" : "April 1, 2015",
-					"publisher" : "Maximum Crash"
-				},
-				"blurb" : ["",""],
-				"gallery" : ["","",""],
-				"more" : "Bravehearts Derby"
-			}
-
-
-
-		}
-
-
-	]
+	"abouthtml" : " <div class='aboutme f1 black-bg'> <div class='filler'> <p> I'm a <span class='f2 blue'>Full-Stack Designer</span> <span class='f2 yellow'>and</span> <span class='f2 red'>Developer</span> who loves to experiment with interactive experiences. I've been digitally solving problems for 4 years. <br><br> I've done design and development on: </p> <div class='abouticons'> <ul> <li> <div> </div> <p>Web Apps</p> </li> <li> <div> </div> <p>Mobile Apps</p> </li> <li> <div> </div> <p>Games</p> </li> <li> <div> </div> <p>Desktop Apps</p> </li> <li> <div> </div> <p>E-Learning</p> </li> </ul> </div> <p style='margin-bottom: 64px;'> I also run a design practice -> <a href='#' class='mlink f0'> Maximum Crash</a> <br> <br> In my spare time I like to draw cartoons, skateboard, travel, make chiptune music <span class='subtext'>(I use a gameboy)</span>, and take care of my plant <span class='subtext'>(promptly named “dude”)</span>. </p> <div class='divider'> </div> <div class='prolinks'> <ul class='f0'> <li> <a href='#'>LinkedIn</a> </li> <li> <a href='#'>Resume</a> </li> <li> <a href='#'>Email</a> </li> <div class='sociallinks'> <ul> <li twitter><a class='icon' href='#'> </a></li> </ul> </div> </ul> </div> </div> </div>",
+	"funfact":["I run Maximum Crash!"]
 }
