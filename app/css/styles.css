@@ -183,9 +183,7 @@ body{
 }
 
 #portfolio {
-  display:flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+
   overflow-y: hidden;
   height: 100%;
 }
@@ -208,7 +206,6 @@ body{
   padding-top: 128px;
   padding-left: 8px;
   position: relative;
-  cursor: pointer;
 }
 
 .topslack{
