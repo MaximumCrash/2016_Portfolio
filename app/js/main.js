@@ -60,22 +60,26 @@ function compilePortfolio() {
 }
 
 function pushAbout() {
-  //$('#portfolio').after($.parseHTML(pm.abouthtml));
+  $('#portfolio').after($.parseHTML(pm.abouthtml));
 }
 
 
 
 
 
-function switchPage(type, index) {
+function switchPage(type, index,pos) {
   switch(type) {
     case 'portfolio': {
+      $(".piccover").velocity({
+        opacity: 0
+      })
       $(".secondary").velocity({
         width: "93px"
       }, {
         complete: function() {
 
-        }
+        },
+        duration: "fast"
       })
       $(".secondary > ul").velocity({
         opacity: 1,
@@ -84,12 +88,14 @@ function switchPage(type, index) {
         complete: function() {
 
 
-        }
+        },
+        duration: "fast"
       });
       $(".aboutme").velocity({
         top: "15px",
         opacity: 0
       }, {
+        duration: "fast",
         complete: function() {
           $("#portfolio").css({display:"block"});
           $("#portfolio").velocity({
@@ -105,16 +111,22 @@ function switchPage(type, index) {
     case 'about': {
       $(".secondary").velocity({
         width: "300px"
-      })
-      $(".secondary > ul").velocity({
-        opacity: 0,
-        paddingLeft:"50"
       }, {
-        complete: function() {
+        complete: function () {
 
         },
         duration: "fast"
       });
+      $(".secondary > ul").velocity({
+        opacity: 0,
+        paddingLeft:"50"
+      },{
+        duration: "fast"
+      });
+      $(".piccover").velocity({
+        opacity: 1
+      })
+
       $("#portfolio").velocity({
         opacity: 0
       },{
@@ -140,6 +152,17 @@ function switchPage(type, index) {
       break;
     }
     case 'case': {
+      var width = $(".transcircle").width()*.25;
+      var height = $(".transcircle").height()*.25;
+      $(".transcircle").css({'left':pos[0]});
+      $(".transcircle").velocity({
+
+        width: "400%",
+        height: "400%",
+        margin:"-200%",
+        marginTop:"-50%",
+        opacity: 1
+      })
       break;
     }
 
@@ -177,13 +200,15 @@ function doneLoading() {
 
 
 
-$('.frontcover').on('click', function() {
+$('.frontcover').on('click', function(e) {
 
   $this = $(this);
   $parent = $this.parent();
   which = $parent.index();
+  var properpos = [e.pageX, e.pageY]
+  console.log(properpos)
   if (!portfolioIsMoving) {
-    console.log(which)
+    switchPage(pageType[3],which,properpos);
   }
 
 });
@@ -214,13 +239,13 @@ $mainLinks.on('click', function () {
       }
     }
 
-  switchPage(pageType[$this.index()],$this.index());
+  switchPage(pageType[$this.index()],$this.index(),null);
   console.log($this.index());
 })
 
 
 $portfolio.mousewheel(function (event, delta) {
-  this.scrollLeft -= (delta * 10);
+  this.scrollLeft -= (delta * 50);
   event.preventDefault();
 });
 }
