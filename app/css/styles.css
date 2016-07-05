@@ -183,13 +183,13 @@ body{
 }
 
 #portfolio {
-
+  white-space: nowrap;
   overflow-y: hidden;
   height: 100%;
 }
 
 .collumns {
-  display:inline-block;
+  display:none;
   margin: 0;
   padding: 0;
   list-style:none;
@@ -206,6 +206,7 @@ body{
   padding-top: 128px;
   padding-left: 8px;
   position: relative;
+  white-space: normal;
 }
 
 .topslack{
@@ -646,18 +647,6 @@ transition: all .2s;
     background: hsla(0, 0%, 100%, .5)
 }
 
-.swipe {
-  overflow: hidden;
-  visibility: hidden;
-  position: relative;
-}
-.swipe-wrap {
-  overflow: hidden;
-  position: relative;
-}
-.swipe-wrap > div {
-  float:left;
-  width:100%;
-  position: relative;
-  overflow: hidden;
+#portfolio .mix {
+  display: none;
 }
