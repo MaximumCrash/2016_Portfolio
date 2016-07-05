@@ -169,17 +169,17 @@
 <!---->
   <div class="secondary grey-bg sb">
     <ul class="f1">
-      <li><a class="active" href="#" data-filter="*">All</a></li>
-      <li><a class="inactive" href="#" data-filter=".games">Games</a></li>
-      <li><a class="inactive" href="#" data-filter=".design">Design</a></li>
-      <li><a class="inactive" href="#" data-filter=".web">Web</a></li>
-      <li><a class="inactive" href="#" data-filter=".music">Music</a></li>
+      <li><a class="active" href="#" data-sort="*">All</a></li>
+      <li><a class="inactive" href="#" data-sort="games">Games</a></li>
+      <li><a class="inactive" href="#" data-sort="design">Design</a></li>
+      <li><a class="inactive" href="#" data-sort="web">Web</a></li>
+      <li><a class="inactive" href="#" data-sort="music">Music</a></li>
     </ul>
   </div>
 
   <div id="portfolio" class="main-carousel">
 
-    <div class="collumn red-bg white carousel-cell">
+    <div class="collumn red-bg white carousel-cell" data-groups='["games"]'>
       <div class="topslack">
         <p class="f0 title">Starlot Derby</span>
         <span class="f1 date">Apr 2015</span>
@@ -191,7 +191,7 @@
       <div class="award"><div class="icon"></div><p class="tiny f1">Mass Digi Game Challenge (2015) <br> Best College Entertainment Game</p></div>
 
     </div>
-        <div class="collumn red-bg white carousel-cell">
+        <div class="collumn red-bg white carousel-cell" data-groups='["games", "ui"]'>
           <div class="topslack">
             <p class="f0 title">Starlot Derby</span>
             <span class="f1 date">Apr 2015</span>
@@ -204,7 +204,7 @@
 
 
   </div>
-  <div class="collumn red-bg white carousel-cell">
+  <div class="collumn red-bg white carousel-cell" data-groups='["design", "web"]'>
     <div class="topslack">
       <p class="f0 title">Starlot Derby</span>
       <span class="f1 date">Apr 2015</span>
@@ -216,7 +216,7 @@
     <div class="award"><div class="icon"></div><p class="tiny f1">Mass Digi Game Challenge (2015) <br> Best College Entertainment Game</p></div>
 
   </div>
-  <div class="collumn red-bg white carousel-cell">
+  <div class="collumn red-bg white carousel-cell" data-groups='["games", "design"]'>
     <div class="topslack">
       <p class="f0 title">Starlot Derby</span>
       <span class="f1 date">Apr 2015</span>
@@ -228,7 +228,7 @@
     <div class="award"><div class="icon"></div><p class="tiny f1">Mass Digi Game Challenge (2015) <br> Best College Entertainment Game</p></div>
 
   </div>
-  <div class="collumn red-bg white carousel-cell">
+  <div class="collumn red-bg white carousel-cell" data-groups='["music"]'>
     <div class="topslack">
       <p class="f0 title">Starlot Derby</span>
       <span class="f1 date">Apr 2015</span>
@@ -240,7 +240,7 @@
     <div class="award"><div class="icon"></div><p class="tiny f1">Mass Digi Game Challenge (2015) <br> Best College Entertainment Game</p></div>
 
   </div>
-  <div class="collumn red-bg white carousel-cell">
+  <div class="collumn red-bg white carousel-cell" data-groups='["music", "design"]'>
     <div class="topslack">
       <p class="f0 title">Starlot Derby</span>
       <span class="f1 date">Apr 2015</span>
@@ -252,7 +252,7 @@
     <div class="award"><div class="icon"></div><p class="tiny f1">Mass Digi Game Challenge (2015) <br> Best College Entertainment Game</p></div>
 
   </div>
-  <div class="collumn red-bg white carousel-cell">
+  <div class="collumn red-bg white carousel-cell" data-groups='["music", "web"]'>
     <div class="topslack">
       <p class="f0 title">Starlot Derby</span>
       <span class="f1 date">Apr 2015</span>
@@ -265,16 +265,17 @@
 
   </div>
   </div>
-
   <!--build:js js/main.min.js -->
+  <script src="js/shuffle.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
   <script src="https://npmcdn.com/flickity@1.2/dist/flickity.pkgd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.js"> </script>
-<script src="https://npmcdn.com/isotope-layout@3.0/dist/isotope.pkgd.min.js"></script>
+
   <script src="js/jquery.jkit.custom.1.2.16.min.js"></script>
   <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"> </script>
   <script src="js/main.js"></script>
   <!--endbuild-->
+
 </body>
 
 </html>

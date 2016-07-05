@@ -29,5 +29,8 @@
     "gulp-useref": "^3.1.0",
     "node-vibrant": "^2.1.2",
     "run-sequence": "^1.2.2"
+  },
+  "dependencies": {
+    "shufflejs": "^4.0.0"
   }
 }
