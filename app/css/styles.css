@@ -224,10 +224,10 @@ user-select: none;
   background-position:center;
   background-size:cover;
   height: 100%;
-  min-width: 290px;
+  min-width: 292px;
   max-width: 300px;
   padding-top: 128px;
-  padding-left: 8px;
+  padding-left: 4px;
   position: relative;
   white-space: normal;
   -webkit-user-select: none;  /* Chrome all / Safari all */
@@ -271,13 +271,42 @@ position: ABSOLUTE;
   background-repeat: no-repeat;
 }
 
-.award > .trophy {
+.trophycase.righty{
+  position: absolute;
+  right: 20px;
+  bottom: 32px;
+}
+
+.trophycase.lefty{
+  position: absolute;
+  left: 20px;
+  bottom: 32px;
+}
+
+.trophycase.righty > .trophy {
   margin: auto;
-  height:100px;
-  width: 100px;
+  height:110px;
+  width: 164px;
   background: url('/images/awardmassdigi.svg');
   background-position:center;
+  background-position:center;
   background-size:contain;
+  background-repeat: no-repeat;
+  float: right;
+  margin-left: 10px;
+}
+
+.trophycase.lefty > .trophy {
+  margin: auto;
+  height:110px;
+  width: 164px;
+  background: url('/images/awardmassdigi.svg');
+  background-position:center;
+  background-position:center;
+  background-size:contain;
+  background-repeat: no-repeat;
+  float: left;
+  margin-right: 10px;
 }
 
 
@@ -495,18 +524,55 @@ background-image: url('/images/elearning.svg');
   background-repeat: repeat-x;
   background-size: contain;
   width:100%;
+  top: 20px;
+  position: relative;
+  opacity: 0;
 }
 
 .header > .nav {
   width: 98%;
   height: 4%;
   padding: 20px;
+  z-index: 1003;
+  opacity:0;
+position: fixed;
 }
 
-.header > .nav > .mylogo {
+.header > .nav > .backarr {
   width: 70px;
   height: 70px;
   float: left;
+  background: url('/images/back.svg');
+  background-position:center;
+  background-size: cover;
+  position: relative;
+  top: 0px;
+  cursor:pointer;
+  opacity: 0.5;
+  transition: all .2s;
+}
+
+.header > .nav > .backarr:hover  {
+  top: -8px;
+  opacity: 1;
+  transition: all .2s;
+}
+
+
+
+.header > .nav > .backtext {
+font-size: 28px;
+position: relative;
+top: 42%;
+margin-left: 15px;
+opacity: 0;
+transition: all .2s;
+}
+
+.header > .nav > .backarr:hover + .backtext {
+  opacity: 1;
+  top: 45%;
+  transition: all .2s;
 }
 
 .header > .nav > .gameicon {
@@ -515,7 +581,7 @@ background-image: url('/images/elearning.svg');
   float: right;
 }
 
-.extra, .mobile-android {
+.extra.mobile-android {
   background: url('/images/android.svg');
   height: 51%;
   background-repeat: no-repeat;
@@ -523,13 +589,38 @@ background-image: url('/images/elearning.svg');
   min-width: 282px;
   min-height: 506px;
   position: absolute;
-  top:0;
+  top:-25px;
   left: 50%;
   transform: translateX(-50%);
   z-index:10;
 }
 
-.extra > .extraimg {
+.extra.mobile-iphone {
+  background: url('/images/iphone.svg');
+  height: 51%;
+  background-repeat: no-repeat;
+  width: 14%;
+  min-width: 282px;
+  min-height: 506px;
+  position: absolute;
+  top:-25px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index:10;
+}
+
+.extra {
+  height: 100%;
+  background-repeat: no-repeat;
+  width:100%;
+  min-width: 282px;
+  min-height: 506px;
+  position: fixed;
+  top:-25px;
+  z-index:0;
+}
+
+.extra.mobile-android > .extraimg {
   background: red;
   width: 82.5%;
   height: 78%;
@@ -537,13 +628,35 @@ background-image: url('/images/elearning.svg');
   top: 48.5%;
   left: 49%;
   transform: translate(-50%,-50%);
+  z-index:1005;
+}
+
+.extra.mobile-iphone > .extraimg {
+  background: red;
+  width: 82.5%;
+  height: 78%;
+  position: absolute;
+  top: 48.5%;
+  left: 49%;
+  transform: translate(-50%,-50%);
+  z-index:1005;
+}
+
+.extra > .extraimg {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0;
+  z-index:1005;
 }
 
 .subheader {
-  background: #FB406F;
   text-align: center;
   height: 117px;
+  position:relative;
+  top: 15px;
   padding-top: 58px;
+  opacity:0;
 }
 
 .subheader > .trophy {
@@ -577,6 +690,7 @@ background-image: url('/images/elearning.svg');
 }
 
 .content {
+  margin-top: 25px;
   margin-left: 20%;
   margin-right: 20%;
 }
@@ -591,7 +705,6 @@ background-image: url('/images/elearning.svg');
 
 .content > .row > li {
   display:inline-block;
-  background: url('/images/appstorebadge.svg');
   width:207px;
   height: 100%;
   background-size: contain;
@@ -662,6 +775,7 @@ margin-bottom: 15px;
   text-align: center;
   font-size: 30px;
   position: absolute;
+  bottom:0;
     left: 0;
     width: 100%;
     color: white;
@@ -693,22 +807,22 @@ transition: all .2s;
   height: 100%;
   width: 100%;
   position: fixed;
-  background: white;
+
   overflow-x: hidden;
   overflow-y: auto;
-  z-index:1000;
+  z-index:0;
 }
 
 .transcircle {
 background: white;
-width: 10px;
+width: 0px;
 height: 100%;
 margin: -5px;
 top:0;
 border-radius: 0%;
 position:fixed;
-z-index:1001;
-opacity: 0.5;
+z-index:1000;
+opacity: 0;
 }
 
 ::-webkit-scrollbar {
@@ -738,4 +852,45 @@ opacity: 0.5;
   background:url('http://image.masslive.com/home/mass-media/pgmain/img/mass_river_worcester_news/photo/20270413-standard.jpg');
   background-position:center;
   background-size: cover;
+}
+
+.bottom {
+position:fixed;
+bottom: 0px;
+font-size: 35px;
+width: 100%;
+z-index:3;
+opacity: 0;
+}
+
+
+.bottom > .righty {
+  float:right;
+  margin-right: 3%;
+  text-decoration: none;
+  cursor: pointer;
+  position:relative;
+  top:0px;
+  transition: all .2s;
+}
+
+.bottom > .lefty {
+  float:left;
+  margin-left: 3%;
+  text-decoration: none;
+  cursor: pointer;
+  position:relative;
+  top:0px;
+  transition: all .2s;
+}
+
+.bottom > .righty:hover {
+  top:-10px;
+  transition: all .2s;
+}
+
+.bottom > .lefty:hover {
+
+  top:-10px;
+  transition: all .2s;
 }

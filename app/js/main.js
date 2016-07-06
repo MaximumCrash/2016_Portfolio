@@ -1,4 +1,5 @@
 var pageType = ["portfolio", "about", "lab", "case"];
+var portfolioTitles = [];
 var startPage = 0;
 var portfolioIsMoving = false;
 var pm = {};
@@ -6,6 +7,311 @@ var previousPage = 0;
 var currentPage = 0;
 var currentpageType = pageType[startPage];
 var handleTemp = Handlebars.templates;
+
+function exitCase() {
+  $(".wrapcase > .header").velocity({
+    opacity: 0,
+    top: 20
+  },{
+    complete: function() {
+      $(".wrapcase > .extra").velocity({
+        top:-25,
+        opacity:0
+      });
+
+      $(".wrapcase > .content").velocity({
+        marginTop: 25,
+        opacity: 0
+      }, {
+        complete: function() {
+          $(".wrapcase > .trophycase").velocity({
+            opacity: 0,
+            bottom: 0
+          },{
+            complete: function () {
+              $(".wrapcase > .bottom").velocity({
+                opacity:0,
+                bottom: 0
+              })
+            }
+          });
+        }
+      })
+    }
+  });
+
+  $(".transcircle").velocity({
+    opacity: 0
+  }, {
+    complete: function() {
+      $(".transcircle").css({
+        width: 0
+      })
+    }
+  })
+}
+
+function initCase(to) {
+  compileCase(to);
+  $(".wrapcase > .header").velocity({
+    opacity: 1,
+    top: 0
+  },{
+    complete: function () {
+      $(".wrapcase > .extra").velocity({
+        top:0,
+        opacity:1
+      });
+
+      $(".wrapcase > .content").velocity({
+        marginTop: 0,
+        opacity: 1
+      },{
+        complete: function () {
+          $(".wrapcase > .trophycase").velocity({
+            opacity: 1,
+            bottom: 32
+          },{
+            complete: function () {
+              $(".wrapcase > .bottom").velocity({
+                opacity:1,
+                bottom: 25
+              })
+            }
+          });
+        }
+      })
+    }
+  });
+
+  $(".wrapcase > .subheader").velocity({
+    opacity: 1,
+    top: 0
+  })
+
+}
+
+function switchCase(to) {
+  $(".wrapcasee").css({
+
+
+    zIndex: 1001
+  })
+  //animate out
+  $(".wrapcase > .header").velocity({
+    opacity: 0,
+    top: 20
+  },{
+    complete: function() {
+      $(".wrapcase > .extra").velocity({
+        top:-25,
+        opacity:0
+      });
+
+      $(".wrapcase > .content").velocity({
+        marginTop: 25,
+        opacity: 0
+      }, {
+        complete: function() {
+          $(".wrapcase > .trophycase").velocity({
+            opacity: 0,
+            bottom: 0
+          },{
+            complete: function () {
+              $(".wrapcase > .bottom").velocity({
+                opacity:0,
+                bottom: 0
+              })
+            }
+          });
+        }
+      })
+    }
+  });
+
+  $(".wrapcase > .subheader").velocity({
+    opacity: 0,
+    top: 15
+  })
+
+
+
+
+
+
+
+  compileCase(to);
+
+  //animate in
+  $(".wrapcase>.header").velocity({
+    opacity: 1,
+    top: 0
+  },{
+    complete: function () {
+      $(".wrapcase > .extra").velocity({
+        top:0,
+        opacity:1
+      });
+
+      $(".wrapcase > .content").velocity({
+        marginTop: 0,
+        opacity: 1
+      },{
+        complete: function () {
+          $(".wrapcase > .trophycase").velocity({
+            opacity: 1,
+            bottom: 32
+          },{
+            complete: function () {
+              $(".wrapcase > .bottom").velocity({
+                opacity:1,
+                bottom: 25
+              })
+            }
+          });
+        }
+      })
+    }
+  });
+
+  $(".wrapcase > .subheader").velocity({
+    opacity: 1,
+    top: 0
+  })
+
+
+
+
+
+
+}
+
+function compileCase(which) {
+  var breakType, breakDistro, nameString,iconString, extraString, trophyString, checkout;
+  var portfolio = pm.portfolio[which];
+  breakType = portfolio.type.split(" ");
+  breakDistro = portfolio.distro.split(",");
+  nameString = portfolio.title.replace(/\s/g, '');
+  iconString = nameString + "icon.svg";
+  extraString = nameString + "extra.svg";
+
+    for (var k = pm.portfolio.length-1; k > -1; k--) {
+      if (portfolio.checkout == pm.portfolio[k].title) {
+        checkout = k;
+        break;
+      }
+    }
+
+
+
+  $(".wrapcase > .header > .gameicon").css({
+    background: "url(/images/" + iconString +  ");"
+  })
+
+
+
+
+  if (breakType[0] == "mobile") {
+    if (breakDistro[0] == "googleplay") {
+    $(".wrapcase > extra").addClass("mobile-android");
+    }
+    else if (breakDistro[0] == "appstore") {
+      $(".wrapcase > extra").addClass("mobile-iphone");
+    }
+  }
+
+  $(".wrapcase > .subheader").attr('class', '.subheader');
+
+  switch (breakType[0]) {
+    case "games" : {
+      $(".wrapcase > .subheader").addClass("yellow-bg");
+      break;
+    }
+    case "web" : {
+      $(".wrapcase > .subheader").addClass("blue-bg");
+      break;
+    }
+    case "mobile" : {
+      $(".wrapcase > .subheader").addClass("red-bg");
+      break;
+    }
+    case "desktop" : {
+      $(".wrapcase > .subheader").addClass("green-bg-bg");
+      break;
+    }
+    case "music" : {
+      $(".wrapcase > .subheader").addClass("purple-bg");
+      break;
+    }
+  }
+
+  if (portfolio.awardwhat != undefined) {
+
+    for (var a =0; a < portfolio.awardwhat.length; a++) {
+      trophyString = portfolio.awardwhere[a] + "trophy.svg";
+
+      if (a < 4) {
+        $(".wrapcase > .subheader > .trophycase.righty").append("<div class='trophy' style='background:url(/images/"+trophyString+")'></div>")
+      }
+      else if (a < 8) {
+        $(".wrapcase > .subheader > .trophycase.lefty").append("<div class='trophy' style='background:url(/images/"+trophyString+")'></div>")
+      }
+      else {
+        break;
+      }
+
+    }
+  }
+
+  $('.wrapcase > .subheader > .title').html(portfolio.title);
+    $('.wrapcase > .subheader > .subtitle').html(portfolio.text);
+
+    for (var d = 0; d < breakDistro.length; d++) {
+      $(".wrapcase > .content > .row").append("<li style='background:url(/images/"+breakDistro[d]+".svg)'></li>")
+      if (d == 4) {
+        break;
+      }
+    }
+    if (portfolio.role != undefined) {
+      $(".wrapcase > .content > p").first().append("<span class='f0'>Role: </span>" + portfolio.role + "<br>")
+    }
+    if (portfolio.released != undefined) {
+      $(".wrapcase > .content > p").first().append("<span class='f0'>Released: </span>" + portfolio.released + "<br>")
+    }
+    if (portfolio.publisher != undefined) {
+      $(".wrapcase > .content > p").first().append("<span class='f0'>Publisher: </span>" + portfolio.publisher + "")
+    }
+
+    $(".wrapcase > .content > p").first().append("<br><br>");
+
+    $(".wrapcase .content p:nth-child(3)").html(portfolio.about);
+
+    var checkCount = 0;
+    for (var g = 0; g < portfolio.gallery.length; g++) {
+      $(".wrapcase > .content > .gallery-col").append("<li class='image' style='background:url(/images/"+nameString+g.toString()+".jpeg)'> </li>");
+      if (g == 3) {
+        //blurb
+        $(".wrapcase > .content > .gallery-col").append("<li class='blurb'> <p class='f1'>"+portfolio.blurb[0]+"</p></li>");
+      }
+
+      if (g == 8) {
+        //blurb
+        $(".wrapcase > .content > .gallery-col").append("<li class='blurb'> <p class='f1'>"+portfolio.blurb[1]+"</p></li>");
+      }
+      }
+
+      $(".wrapcase > .content > .gallery-col").append("<div class='mylogo'> </div> <p class='f0 closure'>“Made with Love”</p>");
+
+      if (portfolio.checkout != undefined || portfolio.checkout != "") {
+        $(".wrapcase > .content > .finalwords > p").html("Want more? Check out <a class='f0' href='#' onclick=switchCase("+checkout+")>"+portfolio.checkout+"</a>")
+      }
+      else {
+        $(".wrapcase > .content > .finalwords > p").html("<a class='f0' href='#' onclick=exitCase()>Back to Work</a>");
+      }
+
+    }
+
+
 
 
 function pushPortfolio(template, which) {
@@ -154,7 +460,7 @@ function switchPage(type, index,pos) {
     case 'case': {
       var width = $(".transcircle").width()*.25;
       var height = $(".transcircle").height()*.25;
-      $(".transcircle").css({'left':pos[0]});
+      $(".transcircle").css({'left':pos[0], 'opacity':0.5});
       $(".transcircle").velocity({
 
         width: "400%",
@@ -162,6 +468,10 @@ function switchPage(type, index,pos) {
         margin:"-200%",
         marginTop:"-50%",
         opacity: 1
+      },{
+        complete: function() {
+          initCase(index);
+        }
       })
       break;
     }
@@ -206,7 +516,6 @@ $('.frontcover').on('click', function(e) {
   $parent = $this.parent();
   which = $parent.index();
   var properpos = [e.pageX, e.pageY]
-  console.log(properpos)
   if (!portfolioIsMoving) {
     switchPage(pageType[3],which,properpos);
   }
