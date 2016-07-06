@@ -52,17 +52,24 @@ function exitCase() {
 }
 
 function initCase(to) {
+  $(".wrapcase").css({
+
+
+    "z-index": "1002"
+  })
   compileCase(to);
+
+
+
   $(".wrapcase > .header").velocity({
     opacity: 1,
     top: 0
   },{
     complete: function () {
-      $(".wrapcase > .extra").velocity({
+      $("#extraheader").velocity({
         top:0,
         opacity:1
       });
-
       $(".wrapcase > .content").velocity({
         marginTop: 0,
         opacity: 1
@@ -73,12 +80,15 @@ function initCase(to) {
             bottom: 32
           },{
             complete: function () {
-              $(".wrapcase > .bottom").velocity({
-                opacity:1,
-                bottom: 25
-              })
+
             }
           });
+
+          $(".wrapcase > .bottom").velocity({
+            opacity:1,
+            bottom: 15
+          });
+
         }
       })
     }
@@ -92,10 +102,10 @@ function initCase(to) {
 }
 
 function switchCase(to) {
-  $(".wrapcasee").css({
+  $(".wrapcase").css({
 
 
-    zIndex: 1001
+    "z-index": 1002
   })
   //animate out
   $(".wrapcase > .header").velocity({
@@ -209,18 +219,19 @@ function compileCase(which) {
   })
 
 
-
-
+  console.log(breakType)
+  $(".wrapcase > .header > .extra").attr('class', 'extra');
   if (breakType[0] == "mobile") {
+    console.log(breakDistro)
     if (breakDistro[0] == "googleplay") {
-    $(".wrapcase > extra").addClass("mobile-android");
+    $(".wrapcase > .header > .extra").addClass("mobile-android");
     }
     else if (breakDistro[0] == "appstore") {
-      $(".wrapcase > extra").addClass("mobile-iphone");
+      $(".wrapcase > .header > .extra").addClass("mobile-iphone");
     }
   }
 
-  $(".wrapcase > .subheader").attr('class', '.subheader');
+  $(".wrapcase > .subheader").attr('class', 'subheader');
 
   switch (breakType[0]) {
     case "games" : {
@@ -267,7 +278,7 @@ function compileCase(which) {
     $('.wrapcase > .subheader > .subtitle').html(portfolio.text);
 
     for (var d = 0; d < breakDistro.length; d++) {
-      $(".wrapcase > .content > .row").append("<li style='background:url(/images/"+breakDistro[d]+".svg)'></li>")
+      $(".wrapcase > .content > .row").append("<li style='background:url(/images/"+breakDistro[d]+"badge.svg)'></li>")
       if (d == 4) {
         break;
       }
@@ -302,7 +313,7 @@ function compileCase(which) {
 
       $(".wrapcase > .content > .gallery-col").append("<div class='mylogo'> </div> <p class='f0 closure'>“Made with Love”</p>");
 
-      if (portfolio.checkout != undefined || portfolio.checkout != "") {
+      if (portfolio.checkout != undefined && portfolio.checkout != "") {
         $(".wrapcase > .content > .finalwords > p").html("Want more? Check out <a class='f0' href='#' onclick=switchCase("+checkout+")>"+portfolio.checkout+"</a>")
       }
       else {
@@ -514,7 +525,7 @@ $('.frontcover').on('click', function(e) {
 
   $this = $(this);
   $parent = $this.parent();
-  which = $parent.index();
+  which = (pm.portfolio.length -1) - $parent.index();
   var properpos = [e.pageX, e.pageY]
   if (!portfolioIsMoving) {
     switchPage(pageType[3],which,properpos);
@@ -574,3 +585,18 @@ $(document).ready(function () {
   console.log($("#portfolio"));
 
 });
+
+// Example of initializing scrollfire with all of its callbacks and most of its properties
+$('.bottom').scrollfire({
+
+
+    // Fires once when element begins to come in from the top
+    onTopIn: function( elm, distance_scrolled ) {
+      console.log("IN")
+    },
+
+    // Fires once when element beings to go out at the top
+    onTopOut: function( elm, distance_scrolled ) {
+      console.log("OUT!")
+    }
+  });

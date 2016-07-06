@@ -534,7 +534,7 @@ background-image: url('/images/elearning.svg');
   height: 4%;
   padding: 20px;
   z-index: 1003;
-  opacity:0;
+  opacity:1;
 position: fixed;
 }
 
@@ -581,6 +581,11 @@ transition: all .2s;
   float: right;
 }
 
+#extraheader {
+  z-index: 10;
+    top:25px;
+    opacity: 0;
+}
 .extra.mobile-android {
   background: url('/images/android.svg');
   height: 51%;
@@ -599,14 +604,16 @@ transition: all .2s;
   background: url('/images/iphone.svg');
   height: 51%;
   background-repeat: no-repeat;
-  width: 14%;
+  width: 15%;
   min-width: 282px;
-  min-height: 506px;
+  min-height: 528px;
   position: absolute;
   top:-25px;
   left: 50%;
   transform: translateX(-50%);
   z-index:10;
+  background-position:center;
+  background-size: cover;
 }
 
 .extra {
@@ -615,8 +622,8 @@ transition: all .2s;
   width:100%;
   min-width: 282px;
   min-height: 506px;
-  position: fixed;
-  top:-25px;
+
+
   z-index:0;
 }
 
@@ -633,11 +640,11 @@ transition: all .2s;
 
 .extra.mobile-iphone > .extraimg {
   background: red;
-  width: 82.5%;
-  height: 78%;
+  width: 78%;
+  height: 73%;
   position: absolute;
-  top: 48.5%;
-  left: 49%;
+  top: 48.9%;
+  left: 50.4%;
   transform: translate(-50%,-50%);
   z-index:1005;
 }
@@ -655,6 +662,7 @@ transition: all .2s;
   height: 117px;
   position:relative;
   top: 15px;
+  z-index:3;
   padding-top: 58px;
   opacity:0;
 }
@@ -775,7 +783,7 @@ margin-bottom: 15px;
   text-align: center;
   font-size: 30px;
   position: absolute;
-  bottom:0;
+  margin-top:20px;
     left: 0;
     width: 100%;
     color: white;
@@ -795,6 +803,7 @@ color:white;
 font-size: 33px;
 position: relative;
 top: 0px;
+    z-index: 1005;
 transition: all .2s;
 }
 
