@@ -5,6 +5,7 @@ var portfolioIsMoving = false;
 var pm = {};
 var previousPage = 0;
 var currentPage = 0;
+var currentCase = 0;
 var currentpageType = pageType[startPage];
 var handleTemp = Handlebars.templates;
 
@@ -13,50 +14,79 @@ function exitCase() {
     opacity: 0,
     top: 20
   },{
-    complete: function() {
-      $(".wrapcase > .extra").velocity({
-        top:-25,
-        opacity:0
-      });
+    duration: "fast"
+  });
 
-      $(".wrapcase > .content").velocity({
-        marginTop: 25,
+  $(".wrapcase > .content").velocity({
+    marginTop: 25,
+    opacity: 0
+  },{
+    duration: "fast"
+  });
+
+  $(".wrapcase > .subheader").velocity({
+    opacity: 0,
+    top: 25
+  },{
+    complete: function () {
+      $(".transcircle").velocity({
         opacity: 0
       }, {
         complete: function() {
-          $(".wrapcase > .trophycase").velocity({
-            opacity: 0,
-            bottom: 0
-          },{
-            complete: function () {
-              $(".wrapcase > .bottom").velocity({
-                opacity:0,
-                bottom: 0
-              })
-            }
+          $(".wrapcase").css({
+            "z-index": "0"
           });
+          $(".transcircle").css({
+            "z-index": "1000",
+            "width" : "0",
+            "height" : "100%",
+            "margin" : "-5px"
+          });
+          $(".wrapcase > .subheader > .trophycase.righty").empty();
+          $(".wrapcase > .subheader > .trophycase.lefty").empty();
+          $(".wrapcase > .content > .row").empty();
+            $(".wrapcase > .content > p").first().empty();
+            $(".wrapcase .content p:nth-child(3)").empty();
+            $(".wrapcase > .content > .gallery-col").empty();
+            $(".wrapcase > .content > .finalwords > p").empty();
         }
       })
-    }
+    },
+    duration: "fast"
+  })
+
+  $(".wrapcase > .bottom").velocity({
+    opacity:0,
+    bottom: 0
+  },{
+    duration: "fast"
+  })
+
+  $(".wrapcase > .trophycase").velocity({
+    opacity: 0,
+    bottom: 0
+  },{
+    duration: "fast"
   });
 
-  $(".transcircle").velocity({
-    opacity: 0
-  }, {
-    complete: function() {
-      $(".transcircle").css({
-        width: 0
-      })
-    }
-  })
+  $("#extraheader").velocity({
+    top:"25px",
+    opacity:0
+  },{
+    duration: "fast"
+  });
+
+
 }
 
 function initCase(to) {
+  currentCase = to;
   $(".wrapcase").css({
 
 
     "z-index": "1002"
-  })
+  });
+
   compileCase(to);
 
 
@@ -69,6 +99,8 @@ function initCase(to) {
       $("#extraheader").velocity({
         top:0,
         opacity:1
+      },{
+        duration: "slow"
       });
       $(".wrapcase > .content").velocity({
         marginTop: 0,
@@ -94,6 +126,7 @@ function initCase(to) {
     }
   });
 
+
   $(".wrapcase > .subheader").velocity({
     opacity: 1,
     top: 0
@@ -102,92 +135,125 @@ function initCase(to) {
 }
 
 function switchCase(to) {
+  currentCase = to;
   $(".wrapcase").css({
 
 
-    "z-index": 1002
+    "z-index": "1001"
   })
   //animate out
   $(".wrapcase > .header").velocity({
     opacity: 0,
     top: 20
   },{
-    complete: function() {
-      $(".wrapcase > .extra").velocity({
-        top:-25,
-        opacity:0
-      });
+    duration: "fast"
+  });
 
-      $(".wrapcase > .content").velocity({
-        marginTop: 25,
-        opacity: 0
-      }, {
-        complete: function() {
-          $(".wrapcase > .trophycase").velocity({
-            opacity: 0,
-            bottom: 0
-          },{
-            complete: function () {
-              $(".wrapcase > .bottom").velocity({
-                opacity:0,
-                bottom: 0
-              })
-            }
-          });
-        }
-      })
-    }
+  $(".wrapcase > .content").velocity({
+    marginTop: 25,
+    opacity: 0
+  },{
+    duration: "fast"
   });
 
   $(".wrapcase > .subheader").velocity({
     opacity: 0,
-    top: 15
-  })
-
-
-
-
-
-
-
-  compileCase(to);
-
-  //animate in
-  $(".wrapcase>.header").velocity({
-    opacity: 1,
-    top: 0
+    top: 25
   },{
     complete: function () {
-      $(".wrapcase > .extra").velocity({
-        top:0,
-        opacity:1
-      });
+          $('.wrapcase').animate({
+            scrollTop: 0
+          }, function(){
 
-      $(".wrapcase > .content").velocity({
-        marginTop: 0,
-        opacity: 1
-      },{
-        complete: function () {
-          $(".wrapcase > .trophycase").velocity({
-            opacity: 1,
-            bottom: 32
-          },{
-            complete: function () {
-              $(".wrapcase > .bottom").velocity({
-                opacity:1,
-                bottom: 25
+              $(".wrapcase > .header").velocity({
+                opacity: 1,
+                top: 0
+              },{
+                complete: function () {
+                  $("#extraheader").velocity({
+                    top:0,
+                    opacity:1
+                  },{
+                    duration: "slow"
+                  });
+                  $(".wrapcase > .content").velocity({
+                    marginTop: 0,
+                    opacity: 1
+                  },{
+                    complete: function () {
+                      $(".wrapcase > .trophycase").velocity({
+                        opacity: 1,
+                        bottom: 32
+                      },{
+                        complete: function () {
+
+                        }
+                      });
+
+                      $(".wrapcase > .bottom").velocity({
+                        opacity:1,
+                        bottom: 15
+                      });
+
+                    }
+                  })
+                }
+              });
+
+
+              $(".wrapcase > .subheader").velocity({
+                opacity: 1,
+                top: 0
               })
-            }
-          });
-        }
-      })
-    }
+
+
+          $(".wrapcase > .subheader > .trophycase.righty").empty();
+          $(".wrapcase > .subheader > .trophycase.lefty").empty();
+          $(".wrapcase > .content > .row").empty();
+            $(".wrapcase > .content > p").first().empty();
+            $(".wrapcase .content p:nth-child(3)").empty();
+            $(".wrapcase > .content > .gallery-col").empty();
+            $(".wrapcase > .content > .finalwords > p").empty();
+
+            compileCase(to);
+            //animate in
+});
+
+
+
+    },
+    duration: "fast"
+  })
+
+  $(".wrapcase > .bottom").velocity({
+    opacity:0,
+    bottom: 0
+  },{
+    duration: "fast"
+  })
+
+  $(".wrapcase > .trophycase").velocity({
+    opacity: 0,
+    bottom: 0
+  },{
+    duration: "fast"
   });
 
-  $(".wrapcase > .subheader").velocity({
-    opacity: 1,
-    top: 0
-  })
+  $("#extraheader").velocity({
+    top:"25px",
+    opacity:0
+  },{
+    duration: "fast"
+  });
+
+
+
+
+
+
+
+
+
 
 
 
@@ -219,10 +285,11 @@ function compileCase(which) {
   })
 
 
-  console.log(breakType)
+  console.log(which)
   $(".wrapcase > .header > .extra").attr('class', 'extra');
+    $(".wrapcase > .subheader").attr('class', 'subheader');
   if (breakType[0] == "mobile") {
-    console.log(breakDistro)
+      $(".wrapcase > .subheader").attr('class', 'subheader mobile');
     if (breakDistro[0] == "googleplay") {
     $(".wrapcase > .header > .extra").addClass("mobile-android");
     }
@@ -230,8 +297,11 @@ function compileCase(which) {
       $(".wrapcase > .header > .extra").addClass("mobile-iphone");
     }
   }
+  else {
+    $(".wrapcase > .subheader").attr('class', 'subheader');
+  }
 
-  $(".wrapcase > .subheader").attr('class', 'subheader');
+
 
   switch (breakType[0]) {
     case "games" : {
@@ -247,7 +317,7 @@ function compileCase(which) {
       break;
     }
     case "desktop" : {
-      $(".wrapcase > .subheader").addClass("green-bg-bg");
+      $(".wrapcase > .subheader").addClass("green-bg");
       break;
     }
     case "music" : {
@@ -283,13 +353,13 @@ function compileCase(which) {
         break;
       }
     }
-    if (portfolio.role != undefined) {
+    if (portfolio.role != undefined && portfolio.role != "") {
       $(".wrapcase > .content > p").first().append("<span class='f0'>Role: </span>" + portfolio.role + "<br>")
     }
-    if (portfolio.released != undefined) {
+    if (portfolio.released != undefined && portfolio.released != "") {
       $(".wrapcase > .content > p").first().append("<span class='f0'>Released: </span>" + portfolio.released + "<br>")
     }
-    if (portfolio.publisher != undefined) {
+    if (portfolio.publisher != undefined && portfolio.publisher != ""  ) {
       $(".wrapcase > .content > p").first().append("<span class='f0'>Publisher: </span>" + portfolio.publisher + "")
     }
 
@@ -387,6 +457,32 @@ function pushAbout() {
 function switchPage(type, index,pos) {
   switch(type) {
     case 'portfolio': {
+      $('#portfolio').css({
+        "overflow-x" : "auto"
+      })
+      $('#portfolio > .wraplab').css({
+        "z-index":"0"
+      });
+      $('#portfolio > .wraplab').velocity({
+        opacity: 0
+      });
+      $('#portfolio > .wraplab > .labhead > p:nth-child(1)').velocity({
+        opacity: 0
+      });
+      $('#portfolio > .wraplab > .labhead > p:nth-child(2)').velocity({
+        opacity: 0
+      });
+      $('#portfolio > .wraplab > .labhead > p:nth-child(3)').velocity({
+        opacity: 0
+      });
+      $('#portfolio > .wraplab > .labhead > p:nth-child(4)').velocity({
+        opacity: 0
+      });
+
+      $('#portfolio > .wraplab > .gridbg').velocity({
+        opacity: 0
+      });
+
       $(".piccover").velocity({
         opacity: 0
       })
@@ -419,7 +515,8 @@ function switchPage(type, index,pos) {
             opacity: 1
           });
           $(".collumn").velocity({
-            marginTop: "0px"
+            marginTop: "0px",
+            opacity: 1
           })
         }
       })
@@ -466,11 +563,156 @@ function switchPage(type, index,pos) {
       break;
     }
     case 'lab': {
+      $('#portfolio').animate({
+        scrollLeft: 0
+      });
+      $(".aboutme").velocity({
+        top: "15px",
+        opacity: 0
+      }, {
+        duration: "fast"});
+      $("#portfolio").css({display:"block"});
+      $("#portfolio").velocity({
+        opacity: 1
+      })
+      $(".secondary").velocity({
+        width: "0px"
+      }, {
+        duration: "fast"
+      });
+      $(".secondary > ul").velocity({
+        opacity: 0,
+        paddingLeft:"-50"
+      },{
+        duration: "fast"
+      });
+      $(".piccover").velocity({
+        opacity: 0
+      });
+      $(".aboutme").velocity({
+        top: "15px",
+        opacity: 0
+      }, {
+        duration: "fast"
+      });
+
+      if (pageType[previousPage] == pageType[1])
+      {
+        $(".collumn").css({ opacity: 0})
+
+        $('#portfolio').css({
+          "overflow-x" : "hidden"
+        })
+        $('#portfolio > .wraplab').css({
+          "z-index":"1200"
+        });
+        $('#portfolio > .wraplab').velocity({
+          opacity: 1
+        });
+        $('#portfolio > .wraplab > .labhead > p:nth-child(1)').velocity({
+          opacity: 1,
+          top: 0
+        },{
+          complete: function() {
+            $('#portfolio > .wraplab > .labhead > p:nth-child(2)').velocity({
+              opacity: 1,
+              top: 0
+            }, {
+              complete: function() {
+                $('#portfolio > .wraplab > .labhead > p:nth-child(3)').velocity({
+                  opacity: 1,
+                  top: 0
+                },{
+                  complete: function() {
+                    $('#portfolio > .wraplab > .labhead > p:nth-child(4)').velocity({
+                      opacity: 1,
+                      top: 0
+                    }, {
+                      complete: function () {
+                        $('#portfolio > .wraplab > .grid').velocity({
+                          opacity: 1,
+                          top: 0
+                        });
+                      }
+                    });
+                  }
+                });
+              }
+            });
+          }
+        });
+
+        $('#portfolio > .wraplab > .gridbg').velocity({
+          opacity: 0.2
+        });
+
+
+      }
+      else {
+        $(".collumn").velocity({
+          marginTop: '-20px',
+          opacity: 0
+
+        },{
+          complete: function () {
+
+            $('#portfolio').css({
+              "overflow-x" : "hidden"
+            })
+            $('#portfolio > .wraplab').css({
+              "z-index":"1200"
+            });
+            $('#portfolio > .wraplab').velocity({
+              opacity: 1
+            });
+            $('#portfolio > .wraplab > .labhead > p:nth-child(1)').velocity({
+              opacity: 1,
+              top: 0
+            },{
+              complete: function() {
+                $('#portfolio > .wraplab > .labhead > p:nth-child(2)').velocity({
+                  opacity: 1,
+                  top: 0
+                }, {
+                  complete: function() {
+                    $('#portfolio > .wraplab > .labhead > p:nth-child(3)').velocity({
+                      opacity: 1,
+                      top: 0
+                    },{
+                      complete: function() {
+                        $('#portfolio > .wraplab > .labhead > p:nth-child(4)').velocity({
+                          opacity: 1,
+                          top: 0
+                        }, {
+                          complete: function () {
+                            $('#portfolio > .wraplab > .grid').velocity({
+                              opacity: 1,
+                              top: 0
+                            });
+                          }
+                        });
+                      }
+                    });
+                  }
+                });
+              }
+            });
+
+            $('#portfolio > .wraplab > .gridbg').velocity({
+              opacity: 0.2
+            });
+
+
+
+          }
+        })
+      }
+
+
+
       break;
     }
     case 'case': {
-      var width = $(".transcircle").width()*.25;
-      var height = $(".transcircle").height()*.25;
       $(".transcircle").css({'left':pos[0], 'opacity':0.5});
       $(".transcircle").velocity({
 
@@ -500,6 +742,12 @@ $.getJSON("js/ajax/data.json", function(result) {
 
 })
 
+if (portfolioIsMoving) {
+  console.log(
+    'MOVING!'
+  )
+}
+
 function doneLoading() {
   compilePortfolio();
   pushAbout();
@@ -519,18 +767,37 @@ function doneLoading() {
        }
 });
 
+$(".wraplab").kinetic({
+  cursor: "grab",
+  x: false,
+
+     moved: function() {
+       portfolioIsMoving =true;
+     },
+     stopped: function() {
+       portfolioIsMoving = false;
+     }
+});
+
 
 
 $('.frontcover').on('click', function(e) {
 
   $this = $(this);
   $parent = $this.parent();
-  which = (pm.portfolio.length -1) - $parent.index();
+  which = (pm.portfolio.length) - $parent.index();
   var properpos = [e.pageX, e.pageY]
   if (!portfolioIsMoving) {
     switchPage(pageType[3],which,properpos);
   }
 
+});
+
+$('.main > div > a').on('click',function() {
+  $mainLinks.siblings().removeClass().addClass("inactive");
+  $mainLinks.first().removeClass("inactive").addClass("active");
+  $mainLinks.first().addClass("blue");
+  switchPage(pageType[0],0,null);
 });
 
 $mainLinks.on('click', function () {
@@ -565,9 +832,24 @@ $mainLinks.on('click', function () {
 
 
 $portfolio.mousewheel(function (event, delta) {
+  if (pageType[currentPage] != "lab"){
   this.scrollLeft -= (delta * 50);
+}
   event.preventDefault();
 });
+
+$('.wraplab').mousewheel(function (event, delta) {
+  this.scrollTop += (delta * 50);
+  event.preventDefault();
+})
+
+$('.grid').masonry({
+  // options
+  itemSelector: '.grid-item',
+  columnWidth: 200,
+  gutter: 20
+});
+
 }
 
 
@@ -576,27 +858,82 @@ $(window).bind('load', function() {
 
 });
 
+function loadLab() {
+var $items = getItems();
+$('.grid').masonryImagesReveal($items);
+}
+
+$.fn.masonryImagesReveal = function($items) {
+  var msnry = this.data('masonry');
+  var itemSelector = msnry.options.itemSelector;
+
+  $items.hide();
+
+  this.append($items);
+  $items.imagesLoaded().progress(function (imgLoad, image) {
+    var $item = $(image.img).parents(itemSelector);
+    $item.show();
+    msnry.appended($item);
+  });
+  return this;
+}
+
+function getItem(index) {
+  var item = '<div class="grid-item '+ pm.lab[index].type+'">'+
+    '<img src="/images/lab'+pm.lab[index].title+'.'+pm.lab[index].imagetype+'" /></div>';
+    return item;
+}
+
+function getItems() {
+  var items = '';
+  for (var i = 0; i < pm.lab.length; i++) {
+    items += getItem(i);
+  }
+
+  return $(items);
+}
+
 var $mainLinks = $('.main > .container > .links > li');
 
 
 var $portfolio = $('#portfolio');
 
-$(document).ready(function () {
-  console.log($("#portfolio"));
-
+$('.wrapcase > .bottom > .righty').on('click', function() {
+  if (currentCase > 0) {
+    currentCase--;
+  }
+  else {
+    currentCase = pm.portfolio.length;
+  }
+  console.log(currentCase)
+  switchCase(currentCase);
 });
 
-// Example of initializing scrollfire with all of its callbacks and most of its properties
-$('.bottom').scrollfire({
+$('.wrapcase > .bottom > .lefty').on('click', function() {
+  if (currentCase < pm.portfolio.length-1) {
+    currentCase++;
+  }
+  else {
+    currentCase = 0;
+  }
+  console.log(currentCase)
+  switchCase(currentCase);
+});
+
+$(document).ready(function () {
 
 
-    // Fires once when element begins to come in from the top
-    onTopIn: function( elm, distance_scrolled ) {
-      console.log("IN")
-    },
+});
+$(".wrapcase > .header > .nav > .backarr").on("click", function() {
+  exitCase();
+})
 
-    // Fires once when element beings to go out at the top
-    onTopOut: function( elm, distance_scrolled ) {
-      console.log("OUT!")
-    }
-  });
+
+$('.wrapcase').on('scroll', function() {
+       if($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 40) {
+           $(".bottom a").removeClass("black").addClass("white");
+       }
+       else {
+         $(".bottom a").removeClass("white").addClass("black");
+       }
+   })

@@ -1,6 +1,6 @@
 body{
   margin: 0;
-  overflow-y: hidden;
+  overflow: hidden;
   height: 100%;
 }
 
@@ -46,7 +46,7 @@ body{
 }
 
 .green-bg {
-  background-color:#26FF00;
+  background-color:#4caf50;
 }
 
 .purple-bg {
@@ -73,6 +73,23 @@ body{
   color: #AD3BE2;
 }
 
+.lab-accent {
+  color: #ff7099;
+}
+
+.lab-accent-bg {
+  background-color: #ff7099;
+}
+
+
+.lab {
+  color: #8c225d;
+}
+
+.lab-bg {
+  background-color: #8c225d;
+}
+
 .f0 {
     font-family: MeltowSan200-Regular;
 }
@@ -83,9 +100,17 @@ body{
 1px 1px white;
 }
 
+.f1 {
+  font-family: geomanist_regularregular;
+}
+
 .f2 {
     font-family: Meltow-Marker;
     font-size: 32px;
+}
+
+.f3 {
+  font-family: 'Source Sans Pro';
 }
 
 .mini {
@@ -124,9 +149,7 @@ body{
   bottom: 133px;
 }
 
-.f1 {
-  font-family: geomanist_regularregular;
-}
+
 
 .container {
   padding-top: 28%;
@@ -195,6 +218,7 @@ user-select: none;
   white-space: nowrap;
   overflow-y: hidden;
   height: 100%;
+  position: relative;
 }
 #portfolio {
     cursor: move; /* fallback if grab cursor is unsupported */
@@ -227,7 +251,7 @@ user-select: none;
   min-width: 292px;
   max-width: 300px;
   padding-top: 128px;
-  padding-left: 4px;
+  padding-left: 9px;
   position: relative;
   white-space: normal;
   -webkit-user-select: none;  /* Chrome all / Safari all */
@@ -324,7 +348,6 @@ position: ABSOLUTE;
 .icon {
   width: 50px;
   height: 50px;
-  background: black;
 }
 
 .text {
@@ -378,7 +401,7 @@ position: ABSOLUTE;
   overflow: hidden;
   height:100%;
   position:relative;
-  top:-15px;
+  top:15px;
   opacity:0;
 }
 
@@ -393,8 +416,8 @@ position: ABSOLUTE;
 }
 
 .subtext {
-  opacity:0.7;
-  font-size: 20px;
+  opacity:0.9;
+  font-size: 26px;
 }
 
 .divider {
@@ -446,7 +469,8 @@ transition: all .2s;
   height: 60px;
   cursor: pointer;
   position:relative;
-  background: url('/images/twitter.svg');
+  float:right;
+  margin-right: 5px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -461,6 +485,7 @@ transition: all .2s;
 .sociallinks > ul > li > a {
   width: 100%;
   height: 100%;
+  display:block;
 }
 
 .mlink {
@@ -533,7 +558,7 @@ background-image: url('/images/elearning.svg');
   width: 98%;
   height: 4%;
   padding: 20px;
-  z-index: 1003;
+  z-index: 1200;
   opacity:1;
 position: fixed;
 }
@@ -597,7 +622,7 @@ transition: all .2s;
   top:-25px;
   left: 50%;
   transform: translateX(-50%);
-  z-index:10;
+  z-index:2000;
 }
 
 .extra.mobile-iphone {
@@ -611,7 +636,7 @@ transition: all .2s;
   top:-25px;
   left: 50%;
   transform: translateX(-50%);
-  z-index:10;
+  z-index:2000;
   background-position:center;
   background-size: cover;
 }
@@ -657,13 +682,53 @@ transition: all .2s;
   z-index:1005;
 }
 
-.subheader {
+.subheader.mobile {
   text-align: center;
   height: 117px;
   position:relative;
   top: 15px;
   z-index:3;
   padding-top: 58px;
+  opacity:0;
+}
+
+.subheader.mobile > .trophy {
+  margin-top: -35px;
+  height: 130px;
+  width: 158px;
+  background: url('/images/awardmassdigi.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 2%;
+  transition: all .2s;
+}
+
+.subheader.mobile > .trophy:hover {
+  margin-top: -40px;
+  transition: all .2s;
+}
+
+.subheader.mobile > .title {
+  margin: 0px;
+  font-size: 53px;
+  color: white;
+}
+
+.subheader.mobile > .subtitle {
+  font-size: 22px;
+  color: white;
+  margin-top: 11px;
+}
+
+.subheader {
+  text-align: center;
+  height: 142px;
+  position:relative;
+  top: 15px;
+  z-index:3;
+  padding-top: 25px;
   opacity:0;
 }
 
@@ -701,6 +766,7 @@ transition: all .2s;
   margin-top: 25px;
   margin-left: 20%;
   margin-right: 20%;
+  opacity: 0;
 }
 
 .content > .row {
@@ -781,7 +847,7 @@ margin-bottom: 15px;
 
 .finalwords {
   text-align: center;
-  font-size: 30px;
+  font-size: 24px;
   position: absolute;
   margin-top:20px;
     left: 0;
@@ -903,3 +969,69 @@ opacity: 0;
   top:-10px;
   transition: all .2s;
 }
+
+.wraplab {
+  height: 100%;
+  width:100%;
+  position:absolute;
+  opacity: 1;
+  cursor: move; /* fallback if grab cursor is unsupported */
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+  overflow-x: hidden;
+}
+ /* (Optional) Apply a "closed-hand" cursor during drag operation. */
+.wraplab:active {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+}
+.labhead {
+  font-size: 40px;
+  position:relative;
+  margin-top:2%;
+  margin-left: 3%;
+  margin-bottom:3%;
+}
+.labtext {
+  font-size: 16px;
+  opacity: 0.75;
+}
+.labhead p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  position:relative;
+  top:-7px;
+  opacity: 0;
+}
+.grid {
+  height: 100%;
+  z-index: 1;
+  margin-left:3%;
+  margin-right:3%;
+  margin-top:1%;
+  top: -8px;
+  opacity: 0;
+}
+.gridbg {
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  background: url("https://www.transparenttextures.com/patterns/grid-me.png");
+
+  background-position: center;
+  background-repeat: repeat;
+  width: 100%;
+  height: 500%;
+  position: absolute;
+  opacity: 0;
+
+  z-index:0;
+  top:0;
+}
+.grid-item {margin-top:0px; min-width: 200px; min-height:200px; margin-bottom: 10px; border-radius:2px; transition: all .2s; }
+.grid-item:hover {margin-top:-6px; transition: all .2s}
+.grid-item.mobileitem {margin-top:0px; min-width: 200px; min-height:310px; margin-bottom: 10px; border-radius:2px;  transition: all .2s;}
+.grid-item.mobileitem:hover {margin-top:-8px; transition: all .2s}
+.grid-item.videoitem { margin-top:0px; min-width: 400px; min-height:300px; margin-bottom: 10px; border-radius:2px;  transition: all .2s;}
+.grid-item.videoitem:hover { margin-top:-8px; transition: all .2s;}
+.grid-item.videoitem img {height:100%; width:100%;}
