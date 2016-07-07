@@ -318,6 +318,9 @@ position: ABSOLUTE;
   background-repeat: no-repeat;
   float: right;
   margin-left: 10px;
+  margin-bottom: 0px;
+  cursor: pointer;
+  transition: all .2s;
 }
 
 .trophycase.lefty > .trophy {
@@ -331,6 +334,19 @@ position: ABSOLUTE;
   background-repeat: no-repeat;
   float: left;
   margin-right: 10px;
+  margin-bottom: 0px;
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.trophycase.righty > .trophy:hover {
+margin-bottom: 10px;
+transition: all .2s;
+}
+
+.trophycase.lefty > .trophy:hover {
+margin-bottom: 10px;
+transition: all .2s;
 }
 
 
@@ -556,16 +572,17 @@ background-image: url('/images/elearning.svg');
 
 .header > .nav {
   width: 98%;
-  height: 4%;
-  padding: 20px;
   z-index: 1200;
   opacity:1;
+  height:0;
 position: fixed;
 }
 
 .header > .nav > .backarr {
   width: 70px;
   height: 70px;
+  margin-left:20px;
+  margin-top:20px;
   float: left;
   background: url('/images/back.svg');
   background-position:center;
@@ -587,8 +604,8 @@ position: fixed;
 
 .header > .nav > .backtext {
 font-size: 28px;
-position: relative;
-top: 42%;
+position: absolute;
+margin-top: 40px;
 margin-left: 15px;
 opacity: 0;
 transition: all .2s;
@@ -596,13 +613,15 @@ transition: all .2s;
 
 .header > .nav > .backarr:hover + .backtext {
   opacity: 1;
-  top: 45%;
+  margin-top: 30px;
   transition: all .2s;
 }
 
 .header > .nav > .gameicon {
   width: 70px;
   height: 70px;
+  margin-right:20px;
+  margin-top:20px;
   float: right;
 }
 
@@ -710,11 +729,11 @@ opacity: 0;
   background: rgba(0,0,0,0.3);
   top:0;
   left:0;
-  width:100%;
-  height:100%;
+  width:0;
+  height:0;
   opacity: 0;
   position: fixed;
-  z-index: ;
+  z-index: 0;
 }
 
 .subheader.mobile {

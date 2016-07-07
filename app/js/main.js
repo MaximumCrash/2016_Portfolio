@@ -77,9 +77,60 @@ function exitCase() {
     top:"25px",
     opacity:0
   },{
-    duration: "fast"
+    duration: "fast",
+    complete: function () {
+      $(".header > .modalbg").css({
+
+        "top": "0",
+        "left": "0",
+        "height" : "0",
+        "width" : "0",
+        "position" : "fixed",
+        "z-index" : "0"
+
+      })
+    }
   });
 
+  modalOpen = false;
+  $(".wrapcase > .bottom").css({
+    "z-index" : "3"
+  })
+
+  $(".extra > .extraimg").attr("class","extraimg");
+  if ($("#extraheader").hasClass('mobile-iphone')) {
+    $(".extra > .extraimg").velocity({
+      width: "78%",
+      height: "73%",
+      top: "48.9%",
+      left: "50.4%",
+      translateY: "-50%",
+      translateX: "-50%",
+      marginLeft: "0"
+    })
+  }
+  else if ($("#extraheader").hasClass('mobile-android')) {
+    $("#extraheader > .extraimg").velocity({
+      width: "82.5%",
+      height: "78%",
+      top: "48.5%",
+      left: "49%",
+      translateY: "-50%",
+      translateX: "-50%",
+    })
+  }
+  else {
+    $("#extraheader > .extraimg").velocity({
+      width: "78%",
+      height: "73%",
+      top: "0",
+      left: "0",
+      translateY: "-50%",
+      translateX: "-50%",
+      marginLeft: "0"
+    })
+  }
+$('#extraheader > .extraimg').empty('iframe')
 
 }
 
@@ -140,6 +191,7 @@ function initCase(to) {
 }
 
 function switchCase(to) {
+
   currentCase = to;
   $(".wrapcase").css({
 
@@ -251,9 +303,47 @@ function switchCase(to) {
     duration: "fast"
   });
 
+modalOpen = false;
+  $(".header > .modalbg").css({
 
+    "top": "0",
+    "left": "0",
+    "height" : "0",
+    "width" : "0",
+    "position" : "fixed",
+    "z-index" : "0"
 
+  })
+  $(".wrapcase > .bottom").css({
+    "z-index" : "3"
+  })
 
+  $(".extra > .extraimg").attr("class","extraimg");
+  if ($(".wrapcase > .subheader").hasClass('mobile')) {
+    $(".extra > .extraimg").velocity({
+      width: "78%",
+      height: "73%",
+      top: "48.9%",
+      left: "50.4%",
+      translateY: "-50%",
+      translateX: "-50%",
+      marginLeft: "0"
+    })
+  }
+  else {
+    $(".extra > .extraimg").velocity({
+      width: "78%",
+      height: "73%",
+      top: "0",
+      left: "0",
+      translateY: "-50%",
+      translateX: "-50%",
+      marginLeft: "0"
+    })
+  }
+$('.extra > .extraimg').empty('iframe')
+
+$('.extra > .extraimg').removeAttr("style");
 
 
 
@@ -943,6 +1033,9 @@ $('.extra > .extraimg').on("click",function () {
 
   if (!modalOpen) {
     modalOpen = true;
+    $(".wrapcase > .bottom").css({
+      "z-index" : "3000"
+    })
     $('.extra > .extraimg').append($.parseHTML(pm.portfolio[currentCase].youtube));
   if (pm.portfolio[currentCase].youtube != "" && pm.portfolio[currentCase].youtube != undefined) {
     var $this = $(this);
@@ -965,7 +1058,9 @@ $('.extra > .extraimg').on("click",function () {
     })
     $this.addClass("modal");
     $(".header > .modalbg").css({
-      "z-index" : "1004"
+      "z-index" : "1004",
+      "width" : "100%",
+      "height" : "100%"
     })
     $(".header > .modalbg").velocity({
       opacity: 1
@@ -978,6 +1073,9 @@ $(".header > .modalbg").on("click", function() {
   if (modalOpen) {
     modalOpen = false;
     var $this = $(this);
+    $(".wrapcase > .bottom").css({
+      "z-index" : "3"
+    })
     $('.extra > .extraimg').empty('iframe')
     $this.css({
       "position":"fixed",
@@ -986,19 +1084,39 @@ $(".header > .modalbg").on("click", function() {
     $('.extra > .extraimg > iframe').css({
       opacity: 0
     })
-    var $this = $(this);
     $(".extra > .extraimg").attr("class","extraimg");
-    $(".extra > .extraimg").velocity({
-      width: "78%",
-      height: "73%",
-      top: "48.9%",
-      left: "50.4%",
-      translateY: "-50%",
-      translateX: "-50%",
-      marginLeft: "0"
-    })
+    if ($(".wrapcase > .subheader").hasClass('mobile')) {
+      $(".extra > .extraimg").velocity({
+        width: "78%",
+        height: "73%",
+        top: "48.9%",
+        left: "50.4%",
+        translateY: "-50%",
+        translateX: "-50%",
+        marginLeft: "0"
+      })
+    }
+    else {
+      $(".extra > .extraimg").velocity({
+        width: "78%",
+        height: "73%",
+        top: "0",
+        left: "0",
+        translateY: "-50%",
+        translateX: "-50%",
+        marginLeft: "0"
+      })
+    }
+
     $this.velocity({
       opacity: 0
+    }, {
+      complete: function () {
+        $(".header > .modalbg").css({
+          'height' : "0",
+          "width" : "0"
+        })
+      }
     })
   }
 })
@@ -1016,3 +1134,8 @@ $('.wrapcase').on('scroll', function() {
          $(".bottom a").removeClass("white").addClass("black");
        }
    })
+
+   $('body').on('click', function (e) {
+
+     console.log(e.target);
+   });
