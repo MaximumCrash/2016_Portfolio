@@ -8,8 +8,12 @@ var currentPage = 0;
 var currentCase = 0;
 var currentpageType = pageType[startPage];
 var handleTemp = Handlebars.templates;
+var modalOpen = false;
 
 function exitCase() {
+  $('.wrapcase').animate({
+    scrollTop: 0
+  });
   $(".wrapcase > .header").velocity({
     opacity: 0,
     top: 20
@@ -81,6 +85,7 @@ function exitCase() {
 
 function initCase(to) {
   currentCase = to;
+
   $(".wrapcase").css({
 
 
@@ -266,7 +271,10 @@ function compileCase(which) {
   var breakType, breakDistro, nameString,iconString, extraString, trophyString, checkout;
   var portfolio = pm.portfolio[which];
   breakType = portfolio.type.split(" ");
-  breakDistro = portfolio.distro.split(",");
+  if (portfolio.distro != "" && portfolio.distro != undefined) {
+    breakDistro = portfolio.distro.split(",");
+  }
+
   nameString = portfolio.title.replace(/\s/g, '');
   iconString = nameString + "icon.svg";
   extraString = nameString + "extra.svg";
@@ -316,7 +324,7 @@ function compileCase(which) {
       $(".wrapcase > .subheader").addClass("red-bg");
       break;
     }
-    case "desktop" : {
+    case "design" : {
       $(".wrapcase > .subheader").addClass("green-bg");
       break;
     }
@@ -329,13 +337,13 @@ function compileCase(which) {
   if (portfolio.awardwhat != undefined) {
 
     for (var a =0; a < portfolio.awardwhat.length; a++) {
-      trophyString = portfolio.awardwhere[a] + "trophy.svg";
+      trophyString = portfolio.awardwhere[a].replace(/\s/g, '').toLowerCase() + "trophy.svg";
 
       if (a < 4) {
-        $(".wrapcase > .subheader > .trophycase.righty").append("<div class='trophy' style='background:url(/images/"+trophyString+")'></div>")
+        $(".wrapcase > .subheader > .trophycase.righty").append("<div class='trophy' style='background-image:url(/images/"+trophyString+")'></div>")
       }
       else if (a < 8) {
-        $(".wrapcase > .subheader > .trophycase.lefty").append("<div class='trophy' style='background:url(/images/"+trophyString+")'></div>")
+        $(".wrapcase > .subheader > .trophycase.lefty").append("<div class='trophy' style='background-image:url(/images/"+trophyString+")'></div>")
       }
       else {
         break;
@@ -347,12 +355,15 @@ function compileCase(which) {
   $('.wrapcase > .subheader > .title').html(portfolio.title);
     $('.wrapcase > .subheader > .subtitle').html(portfolio.text);
 
-    for (var d = 0; d < breakDistro.length; d++) {
-      $(".wrapcase > .content > .row").append("<li style='background:url(/images/"+breakDistro[d]+"badge.svg)'></li>")
-      if (d == 4) {
-        break;
+    if (portfolio.distro != "" && portfolio.distro != undefined) {
+      for (var d = 0; d < breakDistro.length; d++) {
+        $(".wrapcase > .content > .row").append("<li style='background:url(/images/"+breakDistro[d]+"badge.svg)'></li>")
+        if (d == 4) {
+          break;
+        }
       }
     }
+
     if (portfolio.role != undefined && portfolio.role != "") {
       $(".wrapcase > .content > p").first().append("<span class='f0'>Role: </span>" + portfolio.role + "<br>")
     }
@@ -368,19 +379,24 @@ function compileCase(which) {
     $(".wrapcase .content p:nth-child(3)").html(portfolio.about);
 
     var checkCount = 0;
-    for (var g = 0; g < portfolio.gallery.length; g++) {
-      $(".wrapcase > .content > .gallery-col").append("<li class='image' style='background:url(/images/"+nameString+g.toString()+".jpeg)'> </li>");
-      if (g == 3) {
-        //blurb
-        $(".wrapcase > .content > .gallery-col").append("<li class='blurb'> <p class='f1'>"+portfolio.blurb[0]+"</p></li>");
-      }
+    $( "iframe" ).remove();
+    if (pm.portfolio[which].bandcamp != undefined && pm.portfolio[which].bandcamp != "") {
+      $( ".wrapcase > .content > .gallery-col" ).before( $.parseHTML(pm.portfolio[which].bandcamp) );
+    }
+    if (portfolio.gallery.length != 0) {
+      for (var g = 0; g < portfolio.gallery.length; g++) {
+        $(".wrapcase > .content > .gallery-col").append("<li class='image' style='background:url(/images/"+nameString+g.toString()+".jpeg)'> </li>");
+        if (g == 3) {
+          //blurb
+          $(".wrapcase > .content > .gallery-col").append("<li class='blurb'> <p class='f1'>"+portfolio.blurb[0]+"</p></li>");
+        }
 
-      if (g == 8) {
-        //blurb
-        $(".wrapcase > .content > .gallery-col").append("<li class='blurb'> <p class='f1'>"+portfolio.blurb[1]+"</p></li>");
-      }
-      }
-
+        if (g == 8) {
+          //blurb
+          $(".wrapcase > .content > .gallery-col").append("<li class='blurb'> <p class='f1'>"+portfolio.blurb[1]+"</p></li>");
+        }
+        }
+    }
       $(".wrapcase > .content > .gallery-col").append("<div class='mylogo'> </div> <p class='f0 closure'>“Made with Love”</p>");
 
       if (portfolio.checkout != undefined && portfolio.checkout != "") {
@@ -430,7 +446,7 @@ function compilePortfolio() {
           template.backupColor = "red-bg";
           break;
         }
-        case "desktop" : {
+        case "design" : {
           template.backupColor = "green-bg";
           break;
         }
@@ -903,7 +919,7 @@ $('.wrapcase > .bottom > .righty').on('click', function() {
     currentCase--;
   }
   else {
-    currentCase = pm.portfolio.length;
+    currentCase = pm.portfolio.length-1;
   }
   console.log(currentCase)
   switchCase(currentCase);
@@ -922,8 +938,71 @@ $('.wrapcase > .bottom > .lefty').on('click', function() {
 
 $(document).ready(function () {
 
-
 });
+$('.extra > .extraimg').on("click",function () {
+
+  if (!modalOpen) {
+    modalOpen = true;
+    $('.extra > .extraimg').append($.parseHTML(pm.portfolio[currentCase].youtube));
+  if (pm.portfolio[currentCase].youtube != "" && pm.portfolio[currentCase].youtube != undefined) {
+    var $this = $(this);
+    $this.css({
+      "position":"fixed",
+      "z-index": "1005"
+    });
+    $('.extra > .extraimg > iframe').velocity({
+      opacity: 1
+    });
+
+    $this.velocity({
+      top: "11%",
+      left: "50.4%",
+      marginLeft: "-403px",
+      translateX: "0%",
+      translateY: "0%",
+      width: "806px",
+      height: "515px"
+    })
+    $this.addClass("modal");
+    $(".header > .modalbg").css({
+      "z-index" : "1004"
+    })
+    $(".header > .modalbg").velocity({
+      opacity: 1
+    })
+  }}
+});
+
+$(".header > .modalbg").on("click", function() {
+
+  if (modalOpen) {
+    modalOpen = false;
+    var $this = $(this);
+    $('.extra > .extraimg').empty('iframe')
+    $this.css({
+      "position":"fixed",
+      "z-index": "0"
+    });
+    $('.extra > .extraimg > iframe').css({
+      opacity: 0
+    })
+    var $this = $(this);
+    $(".extra > .extraimg").attr("class","extraimg");
+    $(".extra > .extraimg").velocity({
+      width: "78%",
+      height: "73%",
+      top: "48.9%",
+      left: "50.4%",
+      translateY: "-50%",
+      translateX: "-50%",
+      marginLeft: "0"
+    })
+    $this.velocity({
+      opacity: 0
+    })
+  }
+})
+
 $(".wrapcase > .header > .nav > .backarr").on("click", function() {
   exitCase();
 })

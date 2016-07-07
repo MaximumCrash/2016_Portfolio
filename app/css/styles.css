@@ -607,7 +607,7 @@ transition: all .2s;
 }
 
 #extraheader {
-  z-index: 10;
+  z-index: 1004;
     top:25px;
     opacity: 0;
 }
@@ -653,7 +653,7 @@ transition: all .2s;
 }
 
 .extra.mobile-android > .extraimg {
-  background: red;
+  background: white;
   width: 82.5%;
   height: 78%;
   position: absolute;
@@ -664,7 +664,7 @@ transition: all .2s;
 }
 
 .extra.mobile-iphone > .extraimg {
-  background: red;
+  background: white;
   width: 78%;
   height: 73%;
   position: absolute;
@@ -682,6 +682,41 @@ transition: all .2s;
   z-index:1005;
 }
 
+.extra > .modal {
+  background: white;
+position: fixed;
+top: 50%;
+left: 50.4%;
+transform: translate(-50%,0%);
+z-index: 1005;
+width: 656px;
+height: 465px;
+box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
+}
+
+.extra > .modal > iframe{
+width:100%;
+height:100%;
+opacity: 0;
+}
+
+
+.extra > .extraimg > iframe{
+opacity: 0;
+
+}
+
+.header > .modalbg {
+  background: rgba(0,0,0,0.3);
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  opacity: 0;
+  position: fixed;
+  z-index: ;
+}
+
 .subheader.mobile {
   text-align: center;
   height: 117px;
@@ -690,6 +725,7 @@ transition: all .2s;
   z-index:3;
   padding-top: 58px;
   opacity:0;
+
 }
 
 .subheader.mobile > .trophy {
@@ -799,10 +835,6 @@ transition: all .2s;
   margin: auto;
   width: 69%;
   min-width:600px;
-}
-
-.content > p > span {
-/*PUT MELTOW-300 HERE*/
 }
 
 .content > .gallery-col {

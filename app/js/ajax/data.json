@@ -1,7 +1,17 @@
 {
 	"portfolio":[
 		{
-			"type" : "games desktop",
+			"type" : "design music games web mobile",
+			"title" : "Archive",
+			"date" : "",
+			"text" : "Archived designs and unfinished things.",
+			"about" : "",
+			"gallery" : [],
+			"blurb" : [],
+			"checkout" : ""
+		},
+		{
+			"type" : "games",
 			"title" : "Genesis",
 			"date" : "Apr 2013",
 			"text" : "",
@@ -10,8 +20,8 @@
 			"released" : "TBA",
 			"publisher" : "",
 			"about" : "",
-			"gallery" : [""],
-			"blurb" : [""],
+			"gallery" : [],
+			"blurb" : [],
 			"checkout" : "Paracentric"
 		},
 		{
@@ -19,31 +29,33 @@
 			"title" : "Ruby Version",
 			"date" : "Feb 2013",
 			"text" : "My first chiptune mixtape.",
-			"distro" : "bandcamp",
+			"distro" : "",
 			"role": "Composer",
 			"released" : "Feburary 2, 2013",
 			"publisher" : "Maximum Crash",
 			"about" : "",
-			"gallery" : [""],
-			"blurb" : [""],
-			"checkout" : "ChexMix LP"
+			"gallery" : [],
+			"blurb" : [],
+			"checkout" : "ChexMix LP",
+			"bandcamp" : "<iframe style='border: 0;  display:block;margin:auto;width: 400px; height: 406px;box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);' src='https://bandcamp.com/EmbeddedPlayer/album=705047865/size=large/bgcol=333333/linkcol=9a64ff/artwork=none/transparent=true/' seamless><a href='http://maximumcrash.bandcamp.com/album/ruby-version'>Ruby Version by Maximum Crash</a></iframe>"
 		},
 		{
 			"type" : "music",
 			"title" : "Results of My:",
 			"date" : "May 2013",
 			"text" : "A collection of recordings experessing the effects on myself, others and the environment.",
-			"distro" : "bandcamp",
+			"distro" : "",
 			"role": "Composer",
 			"released" : "May 11, 2013",
 			"publisher" : "Maximum Crash",
 			"about" : "",
-			"gallery" : [""],
-			"blurb" : [""],
-			"checkout" : "ChexMix LP"
+			"gallery" : [],
+			"blurb" : [],
+			"checkout" : "ChexMix LP",
+			"bandcamp" : "<iframe style='border: 0;  display:block;margin:auto;width: 400px; height: 406px;box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);' src='https://bandcamp.com/EmbeddedPlayer/album=1697437624/size=large/bgcol=333333/linkcol=9a64ff/artwork=none/transparent=true/' seamless><a href='http://maximumcrash.bandcamp.com/album/results-of-my'>Results of My: by Maximum Crash</a></iframe>"
 		},
 		{
-			"type": "desktop games music",
+			"type": "games music",
 			"title": "Paracentric",
 			"date":"Oct 2013",
 			"text": "A surreal horror RPG made in 24 hours.",
@@ -54,12 +66,12 @@
 			"released" : "Feburary 2, 2013",
 			"publisher" : "DreamMach",
 			"about" : "",
-			"gallery" : [""],
-			"blurb" : [""],
+			"gallery" : [],
+			"blurb" : [],
 			"checkout" : "F Mode"
 		},
 		{
-			"type" : "games desktop",
+			"type" : "games",
 			"title" : "MW Classic",
 			"date" : "Nov 2013",
 			"text" : "Prototype abstract platforming at it's finest.",
@@ -68,8 +80,8 @@
 			"released" : "TBA",
 			"publisher" : "",
 			"about" : "",
-			"gallery" : [""],
-			"blurb" : [""],
+			"gallery" : [],
+			"blurb" : [],
 			"checkout" : "Starlot Derby"
 		},
 		{
@@ -77,17 +89,18 @@
 			"title":  "ChexMix LP",
 			"date" : "Dec 2013",
 			"text" : "An experimental compilation of experience, influence, and inspiration.",
-			"distro" : "bandcamp",
+			"distro" : "",
 			"role": "Composer",
 			"released" : "December 5, 2013",
 			"publisher" : "Maximum Crash",
 			"about" : "",
-			"gallery" : [""],
-			"blurb" : [""],
-			"checkout" : "Some Place, Some Where"
+			"gallery" : [],
+			"blurb" : [],
+			"checkout" : "Some Place, Some Where",
+			"bandcamp" : "<iframe style='border: 0;  display:block;margin:auto;width: 400px; height: 406px;box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);' src='https://bandcamp.com/EmbeddedPlayer/album=4214286102/size=large/bgcol=333333/linkcol=9a64ff/artwork=none/transparent=true/' seamless><a href='http://maximumcrash.bandcamp.com/album/chexmix-lp'>ChexMix LP by Maximum Crash</a></iframe>"
 		},
 		{
-			"type": "games music desktop",
+			"type": "games music",
 			"title" : "RocMoto",
 			"date" : "Dec 2013",
 			"text" : "Aggressive shoot-em-up action.",
@@ -96,12 +109,12 @@
 			"released" : "TBA",
 			"publisher" : "",
 			"about" : "",
-			"gallery" : [""],
-			"blurb" : [""],
+			"gallery" : [],
+			"blurb" : [],
 			"checkout" : "F Mode"
 		},
 		{
-			"type": "mobile games desktop",
+			"type": "mobile games",
 			"title" : "F Mode",
 			"date" : "Oct 2014",
 			"text" : "A breakneck endless runner.",
@@ -110,8 +123,8 @@
 			"released" : "October 20, 2014",
 			"publisher" : "Maximum Crash",
 			"about" : "",
-			"gallery" : [""],
-			"blurb" : [""],
+			"gallery" : [],
+			"blurb" : [],
 			"checkout" : "Starlot Derby"
 		},
 		{
@@ -119,14 +132,15 @@
 			"title" : "Some Place, Some Where",
 			"date" : "Dec 2014",
 			"text" : "An experiment with looping game soundtracks.",
-			"distro" : "bandcamp",
+			"distro" : "",
 			"role": "Composer",
 			"released" : "December 23, 2014",
 			"publisher" : "Maximum Crash",
 			"about" : "",
-			"gallery" : [""],
-			"blurb" : [""],
-			"checkout" : "Results of My:"
+			"gallery" : [],
+			"blurb" : [],
+			"checkout" : "Results of My:",
+			"bandcamp" : "<iframe style='border: 0;  display:block;margin:auto;width: 400px; height: 406px;box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);' src='https://bandcamp.com/EmbeddedPlayer/album=3062325169/size=large/bgcol=333333/linkcol=9a64ff/artwork=none/transparent=true/' seamless><a href='http://maximumcrash.bandcamp.com/album/some-place-some-where'>Some Place, Some Where by Maximum Crash</a></iframe>"
 		},
 		{
 			"type" : "mobile games music",
@@ -140,9 +154,20 @@
 			"released" : "April 1, 2015",
 			"publisher" : "Maximum Crash",
 			"about" : "",
-			"gallery" : [""],
-			"blurb" : [""],
+			"gallery" : [],
+			"blurb" : [],
 			"checkout" : "Bravehearts Derby"
+		},
+		{
+			"type" : "design",
+			"title" : "Reiner.io",
+			"date" : "Jul 2015",
+			"text" : "Branding another designer.",
+			"role" : "Designer",
+			"about":"",
+			"gallery" : [],
+			"blurb" : [],
+			"checkout" : "Woo Game Pile"
 		},
 		{
 			"type" : "mobile games",
@@ -154,9 +179,10 @@
 			"released" : "December 16, 2013",
 			"publisher" : "Thumbspire",
 			"about" : "",
-			"gallery" : [""],
-			"blurb" : [""],
-			"checkout" : "F Mode"
+			"gallery" : [],
+			"blurb" : [],
+			"checkout" : "F Mode",
+			"youtube" : "<iframe width='560' height='315' src='https://www.youtube.com/embed/HMUWzCgeuOQ' frameborder='0' allowfullscreen></iframe>"
 		},
 		{
 			"type" : "mobile games",
@@ -168,22 +194,34 @@
 			"released" : "March 21, 2016",
 			"publisher" : "Maximum Crash",
 			"about" : "",
-			"gallery" : [""],
-			"blurb" : [""],
+			"gallery" : [],
+			"blurb" : [],
+			"checkout" : "",
+			"youtube" : "<iframe width='560' height='315' src='https://www.youtube.com/embed/A-_hvzSTMXE' frameborder='0' allowfullscreen></iframe>"
+		},
+		{
+			"type" : "design",
+			"title" : "Woo Game Pile",
+			"date" : "Jul 2016",
+			"text" : "Putting the Woo! in Worcester",
+			"role" : "Designer",
+			"about" : "",
+			"gallery" : [],
+			"blurb" : [],
 			"checkout" : ""
 		},
 		{
 			"type" : "web",
 			"title" : "The Boston Massacre",
 			"date" : "2015-ongoing",
-			"text" : "Proving critical learning with data.",
+			"text" : "Proving critical learning through interaction with historical data.",
 			"distro" : "website",
 			"role": "Designer/Developer",
 			"released" : "TBA",
 			"publisher" : "Victory Productions",
 			"about" : "",
-			"gallery" : [""],
-			"blurb" : [""],
+			"gallery" : [],
+			"blurb" : [],
 			"checkout" : ""
 		}
 	],
