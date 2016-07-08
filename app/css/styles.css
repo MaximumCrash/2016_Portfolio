@@ -648,7 +648,7 @@ transition: all .2s;
   background: url('/images/iphone.svg');
   height: 51%;
   background-repeat: no-repeat;
-  width: 15%;
+  width: 13%;
   min-width: 282px;
   min-height: 528px;
   position: absolute;
@@ -684,8 +684,8 @@ transition: all .2s;
 
 .extra.mobile-iphone > .extraimg {
   background: white;
-  width: 78%;
-  height: 73%;
+  width: 77%;
+  height: 71%;
   position: absolute;
   top: 48.9%;
   left: 50.4%;

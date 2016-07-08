@@ -1088,7 +1088,7 @@ $(".header > .modalbg").on("click", function() {
     if ($(".wrapcase > .subheader").hasClass('mobile')) {
       $(".extra > .extraimg").velocity({
         width: "78%",
-        height: "73%",
+        height: "78%",
         top: "48.9%",
         left: "50.4%",
         translateY: "-50%",
