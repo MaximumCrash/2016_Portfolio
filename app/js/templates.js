@@ -21,7 +21,9 @@ templates['portfolio'] = template({"1":function(container,depth0,helpers,partial
     + alias4(((helper = (helper = helpers.date || (depth0 != null ? depth0.date : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"date","hash":{},"data":data}) : helper)))
     + "</span>\n    <p class=\"f1 text\">"
     + alias4(((helper = (helper = helpers.text || (depth0 != null ? depth0.text : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"text","hash":{},"data":data}) : helper)))
-    + "</p>\n  </div>\n\n\n"
+    + "</p>\n  </div>\n  <div class=\"identifier\" style=\"background-image:url('images/identify/"
+    + alias4(((helper = (helper = helpers.identify || (depth0 != null ? depth0.identify : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"identify","hash":{},"data":data}) : helper)))
+    + ".svg')\"> </div>\n\n\n"
     + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.awardwhere : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "</div>\n";
 },"useData":true});

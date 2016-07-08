@@ -281,6 +281,18 @@ margin-left: -4px;
   margin-top: 31%;
 }
 
+.identifier {
+  position:absolute;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width:50px;
+  height:50px;
+  top:10px;
+  right:10px;
+  z-index:1;
+}
+
 .award {
 margin: auto;
 z-index: 1;
@@ -559,15 +571,29 @@ background-image: url('/images/elearning.svg');
 }
 
 .header {
-  background: url('/images/test.svg');
+
   height:69%;
   max-height: 445px;
-  background-repeat: repeat-x;
-  background-size: contain;
+
   width:100%;
   top: 20px;
   position: relative;
   opacity: 0;
+}
+
+.headfancy {
+  background: url('/images/header/bostonhead.gif');
+  width:100%;
+  height:100%;
+  position: absolute;
+  background: url('/images/header/bostonhead.gif');
+background-position: center;
+background-size: cover;
+width: 100%;
+height: 100%;
+position: absolute;
+
+}
 }
 
 .header > .nav {
@@ -671,8 +697,33 @@ transition: all .2s;
   z-index:0;
 }
 
+.extraimg > .icon {
+  background: url(/images/video.svg);
+  background-size:cover;
+  border-radius: 7px;
+  background-repeat: no-repeat;
+  background-position:center;
+      box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+      position: relative;
+      margin: auto;
+      top: 37%;
+      width: 75px;
+      height: 75px;
+
+      transition: all .2s;
+
+}
+
+.extraimg > .icon:hover {
+  top:35%;
+   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+transition: all .2s;
+}
+
 .extra.mobile-android > .extraimg {
-  background: white;
+  background: url(http://i.imgur.com/O3DdX18.gif);
+  background-position:center;
+  background-size: cover;
   width: 82.5%;
   height: 78%;
   position: absolute;
@@ -683,7 +734,9 @@ transition: all .2s;
 }
 
 .extra.mobile-iphone > .extraimg {
-  background: white;
+  background: url(http://i.imgur.com/O3DdX18.gif);
+  background-position:center;
+  background-size: cover;
   width: 77%;
   height: 71%;
   position: absolute;

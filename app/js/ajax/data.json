@@ -8,7 +8,8 @@
 			"about" : "",
 			"gallery" : [],
 			"blurb" : [],
-			"checkout" : ""
+			"checkout" : "",
+			"header" : ["","","",""]
 		},
 		{
 			"type" : "games",
@@ -22,7 +23,8 @@
 			"about" : "",
 			"gallery" : [],
 			"blurb" : [],
-			"checkout" : "Paracentric"
+			"checkout" : "Paracentric",
+			"header" : ["","","",""]
 		},
 		{
 			"type" : "music",
@@ -37,6 +39,7 @@
 			"gallery" : [],
 			"blurb" : [],
 			"checkout" : "ChexMix LP",
+			"header" : ["","","",""],
 			"bandcamp" : "<iframe style='border: 0;  display:block;margin:auto;width: 400px; height: 406px;box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);' src='https://bandcamp.com/EmbeddedPlayer/album=705047865/size=large/bgcol=333333/linkcol=9a64ff/artwork=none/transparent=true/' seamless><a href='http://maximumcrash.bandcamp.com/album/ruby-version'>Ruby Version by Maximum Crash</a></iframe>"
 		},
 		{
@@ -52,6 +55,7 @@
 			"gallery" : [],
 			"blurb" : [],
 			"checkout" : "ChexMix LP",
+			"header" : ["","","",""],
 			"bandcamp" : "<iframe style='border: 0;  display:block;margin:auto;width: 400px; height: 406px;box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);' src='https://bandcamp.com/EmbeddedPlayer/album=1697437624/size=large/bgcol=333333/linkcol=9a64ff/artwork=none/transparent=true/' seamless><a href='http://maximumcrash.bandcamp.com/album/results-of-my'>Results of My: by Maximum Crash</a></iframe>"
 		},
 		{
@@ -70,7 +74,8 @@
 			"about" : "",
 			"gallery" : [],
 			"blurb" : [],
-			"checkout" : "F Mode"
+			"checkout" : "F Mode",
+			"header" : ["","","",""]
 		},
 		{
 			"type" : "games",
@@ -84,7 +89,8 @@
 			"about" : "",
 			"gallery" : [],
 			"blurb" : [],
-			"checkout" : "Starlot Derby"
+			"checkout" : "Starlot Derby",
+			"header" : ["","","",""]
 		},
 		{
 			"type" : "music",
@@ -99,10 +105,11 @@
 			"gallery" : [],
 			"blurb" : [],
 			"checkout" : "Some Place, Some Where",
+			"header" : ["","","",""],
 			"bandcamp" : "<iframe style='border: 0;  display:block;margin:auto;width: 400px; height: 406px;box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);' src='https://bandcamp.com/EmbeddedPlayer/album=4214286102/size=large/bgcol=333333/linkcol=9a64ff/artwork=none/transparent=true/' seamless><a href='http://maximumcrash.bandcamp.com/album/chexmix-lp'>ChexMix LP by Maximum Crash</a></iframe>"
 		},
 		{
-			"type": "games music",
+			"type": "games",
 			"title" : "RocMoto",
 			"date" : "Dec 2013",
 			"text" : "Aggressive shoot-em-up action.",
@@ -113,10 +120,11 @@
 			"about" : "",
 			"gallery" : [],
 			"blurb" : [],
+			"header" : ["","","",""],
 			"checkout" : "F Mode"
 		},
 		{
-			"type": "mobile games",
+			"type": "mobile games music",
 			"title" : "F Mode",
 			"date" : "Oct 2014",
 			"text" : "A breakneck endless runner.",
@@ -128,6 +136,7 @@
 			"about" : "",
 			"gallery" : [],
 			"blurb" : [],
+			"header" : ["","","",""],
 			"checkout" : "Starlot Derby"
 		},
 		{
@@ -143,6 +152,7 @@
 			"gallery" : [],
 			"blurb" : [],
 			"checkout" : "Results of My:",
+			"header" : ["","","",""],
 			"bandcamp" : "<iframe style='border: 0;  display:block;margin:auto;width: 400px; height: 406px;box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);' src='https://bandcamp.com/EmbeddedPlayer/album=3062325169/size=large/bgcol=333333/linkcol=9a64ff/artwork=none/transparent=true/' seamless><a href='http://maximumcrash.bandcamp.com/album/some-place-some-where'>Some Place, Some Where by Maximum Crash</a></iframe>"
 		},
 		{
@@ -161,6 +171,7 @@
 			"about" : "",
 			"gallery" : [],
 			"blurb" : [],
+			"header" : ["","","",""],
 			"checkout" : "Bravehearts Derby"
 		},
 		{
@@ -172,6 +183,7 @@
 			"about":"",
 			"gallery" : [],
 			"blurb" : [],
+			"header" : ["","","",""],
 			"checkout" : "Woo Game Pile"
 		},
 		{
@@ -188,6 +200,7 @@
 			"gallery" : [],
 			"blurb" : [],
 			"checkout" : "F Mode",
+			"header" : ["","","",""],
 			"youtube" : "<iframe width='560' height='315' src='https://www.youtube.com/embed/HMUWzCgeuOQ' frameborder='0' allowfullscreen></iframe>"
 		},
 		{
@@ -203,6 +216,7 @@
 			"gallery" : [],
 			"blurb" : [],
 			"checkout" : "",
+			"header" : ["","","",""],
 			"youtube" : "<iframe width='560' height='315' src='https://www.youtube.com/embed/A-_hvzSTMXE' frameborder='0' allowfullscreen></iframe>"
 		},
 		{
@@ -214,6 +228,7 @@
 			"about" : "",
 			"gallery" : [],
 			"blurb" : [],
+			"header" : ["","","",""],
 			"checkout" : ""
 		},
 		{
@@ -229,6 +244,7 @@
 			"about" : "",
 			"gallery" : [],
 			"blurb" : [],
+			"header" : ["bostonhead.gif","none","none","center"],
 			"checkout" : ""
 		}
 	],

@@ -357,6 +357,7 @@ $('.extra > .extraimg').removeAttr("style");
 
 }
 
+
 function compileCase(which) {
   var breakType, breakDistro, nameString,iconString, extraString, trophyString, checkout;
   var portfolio = pm.portfolio[which];
@@ -381,6 +382,12 @@ function compileCase(which) {
   $(".wrapcase > .header > .gameicon").css({
     background: "url(/images/" + iconString +  ");"
   })
+  $(".wrapcase > .header").css({
+    //"background-image" : "url("+portfolio.header[0]+")",
+    "background-repeat" : portfolio.header[1],
+    "background-size" : portfolio.header[2],
+    "bacgkround-position" : portfolio.header[3]
+  });
 
 
   console.log(which)
@@ -545,6 +552,14 @@ function compilePortfolio() {
           break;
         }
       }
+
+      if (breakType.length < 4) {
+        template.identify = breakType[0];
+      }
+      else {
+        template.identify = "archive";
+      }
+
 
       pushPortfolio(handleTemp.portfolio(template), $portfolio);
   }
