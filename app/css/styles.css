@@ -582,11 +582,9 @@ background-image: url('/images/elearning.svg');
 }
 
 .headfancy {
-  background: url('/images/header/bostonhead.gif');
   width:100%;
   height:100%;
   position: absolute;
-  background: url('/images/header/bostonhead.gif');
 background-position: center;
 background-size: cover;
 width: 100%;
@@ -594,7 +592,7 @@ height: 100%;
 position: absolute;
 
 }
-}
+
 
 .header > .nav {
   width: 98%;
@@ -945,8 +943,19 @@ margin-bottom: 15px;
 }
 
 .content > ul> .closure {
+  margin-top: 0px;
   text-align: center;
   font-size: 32px;
+}
+
+.mylogo {
+  background: url(/images/mylogo.svg);
+    width: 430px;
+    height: 300px;
+    margin: auto;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .finalwords {
@@ -1028,8 +1037,8 @@ opacity: 0;
   width:100%;
   height: 100%;
   opacity: 0;
-  background:url('http://image.masslive.com/home/mass-media/pgmain/img/mass_river_worcester_news/photo/20270413-standard.jpg');
-  background-position:center;
+  background:url('/images/Me.jpg');
+  background-position:25%;
   background-size: cover;
 }
 

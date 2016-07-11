@@ -383,10 +383,10 @@ function compileCase(which) {
     background: "url(/images/" + iconString +  ");"
   })
   $(".wrapcase > .header").css({
-    //"background-image" : "url("+portfolio.header[0]+")",
+    "background-image" : "url(/images/header/"+portfolio.header[0]+")",
     "background-repeat" : portfolio.header[1],
     "background-size" : portfolio.header[2],
-    "bacgkround-position" : portfolio.header[3]
+    "background-position" : portfolio.header[3]
   });
 
 
@@ -560,6 +560,10 @@ function compilePortfolio() {
         template.identify = "archive";
       }
 
+      template.bg = "url(/images/header/" + pm.portfolio[k].frontcover[0]+ ");";
+      template.bgrepeat = pm.portfolio[k].frontcover[1];
+      template.bgsize = pm.portfolio[k].frontcover[2];
+      template.bgpos = pm.portfolio[k].frontcover[3];
 
       pushPortfolio(handleTemp.portfolio(template), $portfolio);
   }

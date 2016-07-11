@@ -9,7 +9,8 @@
 			"gallery" : [],
 			"blurb" : [],
 			"checkout" : "",
-			"header" : ["","","",""]
+			"header" : ["","","",""],
+			"frontcover" : ["","","",""]
 		},
 		{
 			"type" : "games",
@@ -24,7 +25,8 @@
 			"gallery" : [],
 			"blurb" : [],
 			"checkout" : "Paracentric",
-			"header" : ["","","",""]
+			"header" : ["genesis.gif","no-repeat","cover","center 43%"],
+			"frontcover" : ["genesis.gif","no-repeat","cover","center"]
 		},
 		{
 			"type" : "music",
@@ -39,7 +41,8 @@
 			"gallery" : [],
 			"blurb" : [],
 			"checkout" : "ChexMix LP",
-			"header" : ["","","",""],
+			"header" : ["rubyversion.jpg","repeat-x","contain","center"],
+			"frontcover" : ["rubyversion.jpg","no-repeat","cover","center"],
 			"bandcamp" : "<iframe style='border: 0;  display:block;margin:auto;width: 400px; height: 406px;box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);' src='https://bandcamp.com/EmbeddedPlayer/album=705047865/size=large/bgcol=333333/linkcol=9a64ff/artwork=none/transparent=true/' seamless><a href='http://maximumcrash.bandcamp.com/album/ruby-version'>Ruby Version by Maximum Crash</a></iframe>"
 		},
 		{
@@ -55,7 +58,8 @@
 			"gallery" : [],
 			"blurb" : [],
 			"checkout" : "ChexMix LP",
-			"header" : ["","","",""],
+			"header" : ["resultsofmy.jpg","no-repeat","cover","bottom"],
+			"frontcover" : ["resultsofmy.jpg","no-repeat","cover","bottom"],
 			"bandcamp" : "<iframe style='border: 0;  display:block;margin:auto;width: 400px; height: 406px;box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);' src='https://bandcamp.com/EmbeddedPlayer/album=1697437624/size=large/bgcol=333333/linkcol=9a64ff/artwork=none/transparent=true/' seamless><a href='http://maximumcrash.bandcamp.com/album/results-of-my'>Results of My: by Maximum Crash</a></iframe>"
 		},
 		{
@@ -75,7 +79,9 @@
 			"gallery" : [],
 			"blurb" : [],
 			"checkout" : "F Mode",
-			"header" : ["","","",""]
+			"header" : ["paracentric.gif","no-repeat","cover","center"],
+			"frontcover" : ["paracentric.gif","no-repeat","cover","center"],
+			"bandcamp" : "<iframe style='border: 0;  display:block;margin:auto;width: 400px; height: 406px;box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);' src='https://bandcamp.com/EmbeddedPlayer/album=1356371606/size=large/bgcol=333333/linkcol=9a64ff/artwork=none/transparent=true/' seamless><a href='http://maximumcrash.bandcamp.com/album/paracentric'>Paracentric by Maximum Crash</a></iframe>"
 		},
 		{
 			"type" : "games",
@@ -90,7 +96,8 @@
 			"gallery" : [],
 			"blurb" : [],
 			"checkout" : "Starlot Derby",
-			"header" : ["","","",""]
+			"frontcover" : ["mwclassic.gif","no-repeat","cover","center"],
+			"header" : ["mwclassic.gif","no-repeat","cover","center"]
 		},
 		{
 			"type" : "music",
@@ -105,7 +112,8 @@
 			"gallery" : [],
 			"blurb" : [],
 			"checkout" : "Some Place, Some Where",
-			"header" : ["","","",""],
+			"header" : ["chexmixlp.jpg","no-repeat","cover","center"],
+			"frontcover" : ["chexmixlp.jpg","no-repeat","cover","center"],
 			"bandcamp" : "<iframe style='border: 0;  display:block;margin:auto;width: 400px; height: 406px;box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);' src='https://bandcamp.com/EmbeddedPlayer/album=4214286102/size=large/bgcol=333333/linkcol=9a64ff/artwork=none/transparent=true/' seamless><a href='http://maximumcrash.bandcamp.com/album/chexmix-lp'>ChexMix LP by Maximum Crash</a></iframe>"
 		},
 		{
@@ -120,7 +128,8 @@
 			"about" : "",
 			"gallery" : [],
 			"blurb" : [],
-			"header" : ["","","",""],
+			"header" : ["rocmoto.gif","no-repeat","cover","center"],
+			"frontcover" : ["rocmoto.gif","no-repeat","cover","center"],
 			"checkout" : "F Mode"
 		},
 		{
@@ -136,7 +145,9 @@
 			"about" : "",
 			"gallery" : [],
 			"blurb" : [],
-			"header" : ["","","",""],
+			"header" : ["fmode.png","repeat-x","contain","center"],
+			"frontcover" : ["fmode.gif","repeat-x","cover","center"],
+			"phone" : ["horizontal", "fmode.gif", ""],
 			"checkout" : "Starlot Derby"
 		},
 		{
@@ -152,7 +163,8 @@
 			"gallery" : [],
 			"blurb" : [],
 			"checkout" : "Results of My:",
-			"header" : ["","","",""],
+			"header" : ["someplacesomewhere.jpg","no-repeat","cover","center"],
+			"frontcover" : ["someplacesomewhere.jpg","no-repeat","cover","center"],
 			"bandcamp" : "<iframe style='border: 0;  display:block;margin:auto;width: 400px; height: 406px;box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);' src='https://bandcamp.com/EmbeddedPlayer/album=3062325169/size=large/bgcol=333333/linkcol=9a64ff/artwork=none/transparent=true/' seamless><a href='http://maximumcrash.bandcamp.com/album/some-place-some-where'>Some Place, Some Where by Maximum Crash</a></iframe>"
 		},
 		{
@@ -171,7 +183,8 @@
 			"about" : "",
 			"gallery" : [],
 			"blurb" : [],
-			"header" : ["","","",""],
+			"header" : ["starlotderby.svg","repeat-x","",""],
+			"frontcover" :  ["starlotderby.gif","none","cover","center"],
 			"checkout" : "Bravehearts Derby"
 		},
 		{
@@ -183,7 +196,8 @@
 			"about":"",
 			"gallery" : [],
 			"blurb" : [],
-			"header" : ["","","",""],
+			"header" : ["reinerio.gif","repeat-x","contain","center"],
+			"frontcover" : ["reinerio.gif","repeat-x","cover","center"],
 			"checkout" : "Woo Game Pile"
 		},
 		{
@@ -194,13 +208,14 @@
 			"distro" : "appstore,googleplay",
 			"distrolinks" : ["", ""],
 			"role": "Lead Designer/Tools Programmer",
-			"released" : "December 16, 2013",
+			"released" : "December 16, 2015",
 			"publisher" : "Thumbspire",
 			"about" : "",
 			"gallery" : [],
 			"blurb" : [],
 			"checkout" : "F Mode",
-			"header" : ["","","",""],
+			"header" : ["hibachihero.PNG","no-repeat","cover","center"],
+			"frontcover" : ["hibachihero.gif","no-repeat","cover","center"],
 			"youtube" : "<iframe width='560' height='315' src='https://www.youtube.com/embed/HMUWzCgeuOQ' frameborder='0' allowfullscreen></iframe>"
 		},
 		{
@@ -216,7 +231,8 @@
 			"gallery" : [],
 			"blurb" : [],
 			"checkout" : "",
-			"header" : ["","","",""],
+			"header" : ["braveheartsderby.png","no-repeat","cover","center"],
+			"frontcover" : ["braveheartsderby.gif","no-repeat","cover","center"],
 			"youtube" : "<iframe width='560' height='315' src='https://www.youtube.com/embed/A-_hvzSTMXE' frameborder='0' allowfullscreen></iframe>"
 		},
 		{
@@ -228,7 +244,8 @@
 			"about" : "",
 			"gallery" : [],
 			"blurb" : [],
-			"header" : ["","","",""],
+			"header" : ["woogamepile.gif","repeat-x","contain","center"],
+			"frontcover" : ["woogamepile.gif","repeat-x","cover","center"],
 			"checkout" : ""
 		},
 		{
@@ -244,11 +261,12 @@
 			"about" : "",
 			"gallery" : [],
 			"blurb" : [],
-			"header" : ["bostonhead.gif","none","none","center"],
+			"header" : ["thebostonmassacre.gif","none","none","center"],
+			"frontcover" : ["thebostonmassacre.gif","none","cover","center"],
 			"checkout" : ""
 		}
 	],
-	"abouthtml" : " <div class='aboutme f1 black-bg'> <div class='filler'> <p> I'm a <span class='f2 blue'>Full-Stack Designer</span> <span class='f2 yellow'>and</span> <span class='f2 red'>Developer</span> who loves to experiment with interactive experiences. I've been digitally solving problems for 4 years. <br><br> I've done design and development on: </p> <div class='abouticons'> <ul> <li> <div> </div> <p>Web Apps</p> </li> <li> <div> </div> <p>Mobile Apps</p> </li> <li> <div> </div> <p>Games</p> </li> <li> <div> </div> <p>Desktop Apps</p> </li> <li> <div> </div> <p>E-Learning</p> </li> </ul> </div> <p style='margin-bottom: 64px;'> I also run a design practice -> <a href='https://www.maximumcrash.com' target='_blank' class='mlink f0'> Maximum Crash</a> <br> <br> In my spare time I like to draw cartoons, skateboard, travel, make chiptune music <span class='subtext'>(I use a gameboy)</span>, and take care of my plant <span class='subtext'>(promptly named “dude”)</span>. </p> <div class='divider'> </div> <div class='prolinks'> <ul class='f0'> <li> <a href='https://www.linkedin.com/in/rtaylorfoster' target='_blank'>LinkedIn</a> </li> <li> <a href='Resume.pdf' target='_blank'>Resume</a> </li> <li> <a href='mailto:rejon@maximumcrash.com'>Email</a> </li> <div class='sociallinks'> <ul> <li style='background-image: url(/images/twitter.svg);'><a class='icon' href='https://twitter.com/Maximum_Crash' target='_blank'> </a></li> <li style='background-image: url(/images/github.svg);'><a class='icon' href='https://github.com/MaximumCrash' target='_blank'> </a></li></ul> </div> </ul> </div> </div> </div>",
+	"abouthtml" : " <div class='aboutme f1 black-bg'> <div class='filler'> <p> I'm a <span class='f2 blue'>Full-Stack Designer</span> <span class='f2 yellow'>and</span> <span class='f2 red'>Developer</span> who loves to experiment with interactive experiences. <br><br> I've been digitally solving problems for 4 years, while attending Becker College in Worcester, Massachusettes. <br><br> I've done design and development for: </p> <div class='abouticons'> <ul> <li> <div> </div> <p>Web Apps</p> </li> <li> <div> </div> <p>Mobile Apps</p> </li> <li> <div> </div> <p>Games</p> </li> <li> <div> </div> <p>Desktop Apps</p> </li> <li> <div> </div> <p>E-Learning</p> </li> </ul> </div> <p style='margin-bottom: 64px;'> I run a digital production studio -> <a href='https://www.maximumcrash.com' target='_blank' class='mlink f0'> Maximum Crash</a> <br> <br> I'm also a board member of the <a href='http://gamepile.org/' target='_blank' class='mlink f0'> Worcester Game Pile</a><br><br>In my spare time I teach game development to kids at the Worcester Public Library and like to draw cartoons, skateboard, travel, make chiptune music <span class='subtext'>(I use a gameboy)</span>, and take care of my plant <span class='subtext'>(promptly named “dude”)</span>. </p> <div class='divider'> </div> <div class='prolinks'> <ul class='f0'> <li> <a href='https://www.linkedin.com/in/rtaylorfoster' target='_blank'>LinkedIn</a> </li> <li> <a href='Resume.pdf' target='_blank'>Resume</a> </li> <li> <a href='mailto:rejon@maximumcrash.com'>Email</a> </li> <div class='sociallinks'> <ul> <li style='background-image: url(/images/twitter.svg);'><a class='icon' href='https://twitter.com/Maximum_Crash' target='_blank'> </a></li> <li style='background-image: url(/images/github.svg);'><a class='icon' href='https://github.com/MaximumCrash' target='_blank'> </a></li></ul> </div> </ul> </div> </div> </div>",
 	"lab" : [
 		{
 			"type" : "videoitem",
