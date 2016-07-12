@@ -668,7 +668,6 @@ transition: all .2s;
 .header > .nav > .gameicon {
   width: 70px;
   height: 70px;
-  margin-right:20px;
   margin-top:20px;
   float: right;
 }
