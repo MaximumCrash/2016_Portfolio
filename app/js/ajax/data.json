@@ -3,7 +3,7 @@
 		{
 			"type" : "games",
 			"title" : "Genesis",
-			"date" : "Mar 2013",
+			"date" : "Jan 2013",
 			"text" : "",
 			"distro" : "",
 			"role": "Developer",
@@ -90,7 +90,7 @@
 		{
 			"type" : "music",
 			"title":  "ChexMix LP",
-			"date" : "Dec 2013",
+			"date" : "Aug 2012",
 			"text" : "An experimental compilation of experience, influence, and inspiration.",
 			"distro" : "music",
 			"role": "Composer",
@@ -107,7 +107,7 @@
 		{
 			"type": "games",
 			"title" : "RocMoto",
-			"date" : "Dec 2013",
+			"date" : "Jun 2014",
 			"text" : "Aggressive shoot-em-up action.",
 			"distro" : "",
 			"role": "Developer",
@@ -126,7 +126,7 @@
 			"date" : "Oct 2014",
 			"text" : "A breakneck endless runner.",
 			"distro" : "googleplay,gamejolt",
-			"distrolinks" : ["https://play.google.com/store/apps/details?id=max.maximumcrash.FMode", "http://gamejolt.com/games/f-mode-classic/36084"],
+			"links" : ["https://play.google.com/store/apps/details?id=max.maximumcrash.FMode", "http://gamejolt.com/games/f-mode-classic/36084"],
 			"role": "Developer/Publisher",
 			"released" : "October 20, 2014",
 			"publisher" : "Maximum Crash",
