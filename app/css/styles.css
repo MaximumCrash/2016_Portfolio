@@ -416,7 +416,7 @@ transition: all .2s;
 }
 
 .collumn:hover > .backcover {
-  opacity: 0.5;
+  opacity: 0.2;
   transition: all .2s;
 }
 
@@ -467,8 +467,9 @@ transition: all .2s;
 }
 
 .supersubtext {
-  opacity:0.5;
+  opacity:0.7;
   font-size: 20px;
+  font-style: italic;
 }
 
 .divider {
@@ -893,8 +894,8 @@ opacity: 0;
 
 .content {
   margin-top: 25px;
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-left: 10%;
+  margin-right: 10%;
   opacity: 0;
 }
 
@@ -924,12 +925,20 @@ opacity: 0;
 }
 
 .content > p {
-  font-size: 28px;
+  font-size: 23px;
   margin: auto;
-  width: 69%;
+  width: 88%;
   min-width:600px;
   max-width:880px;
+  opacity:0.75;
 
+}
+
+.content > p:nth-child(2) {
+  opacity: 0.8;
+  font-size: 28px;
+  width: 0;
+  margin-bottom: 31px;
 }
 
 .content > .gallery-col {

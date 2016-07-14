@@ -491,7 +491,7 @@ function compileCase(which) {
     $(".wrapcase > .content > p").first().append("<span class='f0'>Publisher: </span>" + portfolio.publisher + "")
   }
 
-  $(".wrapcase > .content > p").first().append("<br><br>");
+  
 
   $(".wrapcase .content p:nth-child(3)").html(portfolio.about);
 
