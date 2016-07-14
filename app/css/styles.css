@@ -807,6 +807,7 @@ opacity: 0;
 
 #videoplace > iframe {
       box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      display: none;
 }
 
 .closeme {
@@ -923,8 +924,22 @@ opacity: 0;
 
 .content {
   margin-top: 25px;
-  margin-left: 10%;
-  margin-right: 10%;
+  padding-left: 10%;
+  padding-right: 10%;
+  opacity: 0;
+  background: white;
+}
+
+.backwrap {
+  background: white;
+  width: 0%;
+  height:0%;
+  max-height: 451px;
+  margin: -5px;
+  top:20px;
+  border-radius: 0%;
+  position:fixed;
+  z-index:1001;
   opacity: 0;
 }
 
@@ -981,7 +996,7 @@ opacity: 0;
 
 .content > .gallery-col > .image {
 width: 100%;
-background: red;
+
 height: 450px;
 margin: auto;
 display: block;
@@ -994,7 +1009,7 @@ margin-bottom: 15px;
 .content > .gallery-col > a > img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  /*object-fit: cover;*/
   object-position: center;
   position: relative;
   display: block;
