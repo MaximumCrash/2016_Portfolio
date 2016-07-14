@@ -271,7 +271,7 @@ right:0
 -moz-user-select: none;     /* Firefox all */
 -ms-user-select: none;      /* IE 10+ */
 user-select: none;          /* Likely future */
-margin-left: -4px;
+margin-left: -5px;
 }
 
 .topslack{
