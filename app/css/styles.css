@@ -547,6 +547,7 @@ transition: all .2s;
   font-size:29px;
   top: 0px;
   transition: all .2s;
+  opacity: 1;
   position:relative;
 }
 
@@ -927,9 +928,8 @@ opacity: 0;
 .content > p {
   font-size: 23px;
   margin: auto;
-  width: 88%;
-  min-width:600px;
-  max-width:880px;
+  width: 80%;
+
   opacity:0.75;
 
 }
@@ -938,7 +938,9 @@ opacity: 0;
   opacity: 0.8;
   font-size: 28px;
   width: 0;
-  margin-bottom: 31px;
+  margin-bottom: 20px;
+  min-width:500px;
+  max-width:880px;
 }
 
 .content > .gallery-col {
