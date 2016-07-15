@@ -11,11 +11,11 @@ var handleTemp = Handlebars.templates;
 var modalOpen = false;
 
 function exitCase() {
-
+  $("#portfolio").css({
+    "display" : "block"
+  })
   portfolioIsMoving = false;
-  $('.wrapcase').animate({
-    scrollTop: 0
-  });
+
   $(".backwrap").velocity({
     opacity: 0,
     top: 20
@@ -60,6 +60,10 @@ function exitCase() {
             "width": "0",
             "height": "0"
           })
+
+          $('.wrapcase').animate({
+            scrollTop: 0
+          });
         }
       })
     },
@@ -143,32 +147,32 @@ $(".wrapcase > .header").velocity({
       $("#extraheader").velocity({
         top: 0,
         opacity: 1
-      }, {
-        duration: "slow"
       });
-      $(".wrapcase > .content").velocity({
-        marginTop: 0,
-        opacity: 1
-      }, {
-        complete: function() {
-          $(".wrapcase > .trophycase").velocity({
-            opacity: 1,
-            bottom: 32
-          }, {
-            complete: function() {
 
-            }
-          });
+      $(".wrapcase > .bottom").velocity({
+        opacity: 1,
+        bottom: 15
+      });
 
-          $(".wrapcase > .bottom").velocity({
-            opacity: 1,
-            bottom: 15
-          });
-
-        }
-      })
     }
   });
+  $(".wrapcase > .content").velocity({
+    marginTop: 0,
+    opacity: 1
+  }, {
+    complete: function() {
+      $(".wrapcase > .trophycase").velocity({
+        opacity: 1,
+        bottom: 32
+      }, {
+        complete: function() {
+
+        }
+      });
+
+
+    }
+  })
 
 
   $(".wrapcase > .subheader").velocity({
@@ -220,32 +224,31 @@ function switchCase(to) {
             $("#extraheader").velocity({
               top: 0,
               opacity: 1
-            }, {
-              duration: "slow"
             });
-            $(".wrapcase > .content").velocity({
-              marginTop: 0,
-              opacity: 1
-            }, {
-              complete: function() {
-                $(".wrapcase > .trophycase").velocity({
-                  opacity: 1,
-                  bottom: 32
-                }, {
-                  complete: function() {
 
-                  }
-                });
-
-                $(".wrapcase > .bottom").velocity({
-                  opacity: 1,
-                  bottom: 15
-                });
-
-              }
-            })
           }
         });
+        $(".wrapcase > .content").velocity({
+          marginTop: 0,
+          opacity: 1
+        }, {
+          complete: function() {
+            $(".wrapcase > .trophycase").velocity({
+              opacity: 1,
+              bottom: 32
+            }, {
+              complete: function() {
+
+              }
+            });
+
+            $(".wrapcase > .bottom").velocity({
+              opacity: 1,
+              bottom: 15
+            });
+
+          }
+        })
 
 
         $(".wrapcase > .subheader").velocity({
@@ -562,19 +565,29 @@ $(".backwrap").velocity({
     })
   }
 
-  if ($("#extraheader").hasClass('mobile-iphone') || $("#extraheader").hasClass('mobile-android')) {
+  if ($("#extraheader").hasClass('mobile-iphone')){
 
 
     $(".extra > .extraimg").css({
-      width: "78%",
-      height: "78%",
+      width: "79%",
+      height: "73%",
       translateY: "-50%",
       translateX: "-50%",
       marginLeft: "0"
     })
 
 
-  } else {
+  }
+  else if ($("#extraheader").hasClass('mobile-android')) {
+    $(".extra > .extraimg").css({
+      width: "80%",
+      height: "77%",
+      translateY: "-50%",
+      translateX: "-50%",
+      marginLeft: "0"
+    })
+  }
+  else {
     $('#extraheader > .extraimg').velocity({
       opacity: 0
     })
@@ -954,6 +967,9 @@ function switchPage(type, index, pos) {
         }, {
           complete: function() {
             initCase(index);
+            $("#portfolio").css({
+              "display" : "none"
+            })
           }
         })
         break;
