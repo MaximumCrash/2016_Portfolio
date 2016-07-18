@@ -536,16 +536,20 @@ $(".backwrap").velocity({
         }
       if (g == 3 && portfolio.gallery[g][1] != "mobile") {
         //blurb
+        if (portfolio.blurb.length > 0){
         $(".wrapcase > .content > .gallery-col").append("<li class='blurb'> <p class='f1'>" + portfolio.blurb[0] + "</p></li>");
+      }
       }
 
       if (g == 8 && portfolio.gallery[g][1] != "mobile") {
         //blurb
+        if (portfolio.blurb.length > 0){
         $(".wrapcase > .content > .gallery-col").append("<li class='blurb'> <p class='f1'>" + portfolio.blurb[1] + "</p></li>");
+        }
       }
     }
   }
-  $(".wrapcase > .content > .gallery-col").append("<div class='mylogo'> </div> <p class='f0 closure'>“Made with Love”</p>");
+  $(".wrapcase > .content > .gallery-col").append("<div class='mylogo'> </div> <p class='f0 closure'>Made with Love</p>");
 
   if (portfolio.checkout != undefined && portfolio.checkout != "") {
     $(".wrapcase > .content > .finalwords > p").html("Want more? Check out <a class='f0' href='#' onclick=switchCase(" + checkout + ")>" + portfolio.checkout + "</a>")
@@ -996,6 +1000,7 @@ function doneLoading() {
   $portfolio.mixItUp();
   $portfolio.kinetic({
     cursor: "grab",
+    slowdown: 0.85,
     y: false,
     filterTarget: function(target, e) {
       $target = $(target);
@@ -1097,7 +1102,7 @@ function doneLoading() {
 
   $portfolio.mousewheel(function(event, delta) {
     clearTimeout($.data(this, 'scrollTimer'));
-    portfolioIsMoving = true;
+    //portfolioIsMoving = true;
     $.data(this, 'scrollTimer', setTimeout(function() {
       // do something
       portfolioIsMoving = false;

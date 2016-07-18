@@ -970,7 +970,7 @@ opacity: 0;
 .content > p {
   font-size: 23px;
   margin: auto;
-  width: 80%;
+  width: 900px;
 
   opacity:0.75;
 
@@ -994,14 +994,12 @@ opacity: 0;
 }
 
 .content > .gallery-col > .image {
-width: 100%;
-
-height: 450px;
+height: 506px;
 margin: auto;
 display: block;
-max-width: 805px;
+max-width: 900px;
 border-radius: 2px;
-margin-bottom: 15px;
+margin-bottom: 64px;
 
 }
 
@@ -1052,11 +1050,11 @@ margin-bottom: 15px;
 }
 
 .content > .gallery-col > .blurb > p{
-  font-size: 21px;
+  font-size: 23px;
     margin: auto;
     width: 98%;
     min-width: 552px;
-
+    margin-bottom:30px;
 }
 
 .content > .gallery-col> .closure {

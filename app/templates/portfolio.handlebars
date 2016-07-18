@@ -1,3 +1,4 @@
+{{#if notmobile}}
 <div class="collumn {{backupColor}} white carousel-cell mix {{type}}" style="background-image:{{bg}}; background-repeat:{{bgrepeat}}; background-size:{{bgsize}}; background-position:{{bgpos}};" >
   <div class="frontcover"> </div>
   <div class="backcover"> </div>
@@ -13,3 +14,20 @@
   <div class="award"><div class="icon"></div><p class="tiny f1">{{awardwhere}} <br> {{awardwhat}}</p></div>
 {{/if}}
 </div>
+{{else}}
+<div class="mobilecollumn {{backupColor}} white carousel-cell mix {{type}}" style="background-image:{{bg}}; background-repeat:{{bgrepeat}}; background-size:{{bgsize}}; background-position:{{bgpos}};" >
+  <div class="frontcover"> </div>
+  <div class="backcover"> </div>
+  <div class="topslack">
+    <p class="f0 title">{{title}}</p>
+    <span class="f1 date">{{date}}</span>
+    <p class="f1 text">{{text}}</p>
+  </div>
+  <div class="identifier" style="background-image:url('images/identify/{{identify}}.svg')"> </div>
+
+
+{{#if awardwhere}}
+  <div class="award"><div class="icon"></div><p class="tiny f1">{{awardwhere}} <br> {{awardwhat}}</p></div>
+{{/if}}
+</div>
+{{/if}}
