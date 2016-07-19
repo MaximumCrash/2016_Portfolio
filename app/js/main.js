@@ -780,7 +780,7 @@ function switchPage(type, index, pos) {
     case 'about':
       {
         $(".secondary").velocity({
-          width: "300px"
+          width: "260px"
         }, {
           complete: function() {
 
