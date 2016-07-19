@@ -63,7 +63,7 @@ gulp.task('useref',function () {
 gulp.task('browserSync', function () {
   browserSync.init({
     server: {
-      baseDir: 'actual'
+      baseDir: 'app'
     },
   })
 });

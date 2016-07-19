@@ -179,7 +179,7 @@ body{
 
 .secondary {
   height: 100%;
-  width: 93px;
+  width: 300px;
   background-position:center;
   background-size: cover;
   position: relative;
@@ -192,7 +192,8 @@ body{
   transform: translate(-50%, -50%);
   position: absolute;
   list-style: none;
-  padding: 0;
+  padding-left: 50px;
+  opacity: 0;
   font-size:17px;
 }
 
@@ -218,6 +219,8 @@ user-select: none;
   white-space: nowrap;
   overflow-y: hidden;
   height: 100%;
+  opacity: 0;
+
   position: relative;
 }
 #portfolio {
@@ -389,7 +392,7 @@ position: ABSOLUTE;
   left: 0;
   top: 0;
   position: absolute;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0,0,0,0.55);
   transition: all .2s;
 }
 
@@ -403,7 +406,7 @@ position: ABSOLUTE;
 }
 
 .collumn:hover > .backcover {
-  opacity: 0.2;
+  opacity: 0.8;
   transition: all .2s;
 }
 
@@ -429,8 +432,8 @@ position: ABSOLUTE;
   overflow: hidden;
   height:100%;
   position:relative;
-  top:15px;
-  opacity:0;
+  top:0px;
+  opacity:1;
 }
 
 .filler {
@@ -1152,7 +1155,7 @@ opacity: 0;
 
   width:100%;
   height: 100%;
-  opacity: 0;
+  opacity: 1;
   background:url('/images/Me.jpg');
   background-position:25%;
   background-size: cover;

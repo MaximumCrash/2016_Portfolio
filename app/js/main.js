@@ -1,6 +1,6 @@
-var pageType = ["portfolio", "about", "lab", "case"];
+var pageType = ["about","portfolio","lab", "case"];
 var portfolioTitles = [];
-var startPage = 0;
+var startPage = 1;
 var portfolioIsMoving = false;
 var pm = {};
 var previousPage = 0;
@@ -120,7 +120,10 @@ function initCase(to) {
   $(".backwrap").css({
     "width": "100%",
     "height": "69%"
-  })
+  });
+  $(".wrapcase > .bottom > .lefty").css({
+    "opacity": 1
+  });
   portfolioIsMoving = false;
   currentCase = to;
 
@@ -154,6 +157,7 @@ $(".wrapcase > .header").velocity({
         bottom: 15
       });
 
+
     }
   });
   $(".wrapcase > .content").velocity({
@@ -179,12 +183,21 @@ $(".wrapcase > .header").velocity({
     opacity: 1,
     top: 0
   })
+  console.log(currentCase);
+  if (currentCase == pm.portfolio.length-1) {
+    $(".wrapcase > .bottom > .lefty").css({
+      "opacity": 0
+    });
+  }
 
 
 
 }
 
 function switchCase(to) {
+  $(".wrapcase > .bottom > .lefty").css({
+    "opacity": 1
+  });
   portfolioIsMoving = false;
   currentCase = to;
   $(".wrapcase").css({
@@ -328,7 +341,11 @@ function switchCase(to) {
 
 
 
-
+  if (currentCase == pm.portfolio.length-1) {
+    $(".wrapcase > .bottom > .lefty").css({
+      "opacity": 0
+    });
+  }
 
 
 
@@ -481,7 +498,7 @@ $(".backwrap").velocity({
   }
 
   $('.wrapcase > .subheader > .title').html(portfolio.title);
-  $('.wrapcase > .subheader > .subtitle').html(portfolio.text);
+  $('.wrapcase > .subheader > .subtitle').html("<span class='f0'>Role:</span> " + portfolio.role);
 
   if (portfolio.distro != "" && portfolio.distro != undefined) {
     $(".wrapcase > .content > .row").css({
@@ -500,13 +517,13 @@ $(".backwrap").velocity({
   }
 
   if (portfolio.role != undefined && portfolio.role != "") {
-    $(".wrapcase > .content > p").first().append("<span class='f0'>Role: </span>" + portfolio.role + "<br>")
+    //$(".wrapcase > .content > p").first().append("<span class='f0'>Role: </span>" + portfolio.role + "<br>")
   }
   if (portfolio.released != undefined && portfolio.released != "") {
-    $(".wrapcase > .content > p").first().append("<span class='f0'>Released: </span>" + portfolio.released + "<br>")
+    $(".wrapcase > .content > p").first().append("<span class='f0'>Launched: </span>" + portfolio.released + "<br>")
   }
   if (portfolio.publisher != undefined && portfolio.publisher != "") {
-    $(".wrapcase > .content > p").first().append("<span class='f0'>Publisher: </span>" + portfolio.publisher + "")
+    //$(".wrapcase > .content > p").first().append("<span class='f0'>Publisher: </span>" + portfolio.publisher + "")
   }
 
 
@@ -549,7 +566,7 @@ $(".backwrap").velocity({
       }
     }
   }
-  $(".wrapcase > .content > .gallery-col").append("<div class='mylogo'> </div> <p class='f0 closure'>Made with Love</p>");
+  //$(".wrapcase > .content > .gallery-col").append("<div class='mylogo'> </div> <p class='f0 closure'>Made with Love</p>");
 
   if (portfolio.checkout != undefined && portfolio.checkout != "") {
     $(".wrapcase > .content > .finalwords > p").html("Want more? Check out <a class='f0' href='#' onclick=switchCase(" + checkout + ")>" + portfolio.checkout + "</a>")
@@ -986,6 +1003,7 @@ function switchPage(type, index, pos) {
 $.getJSON("js/ajax/data.json", function(result) {
   pm = result;
   console.log(pm)
+
   doneLoading();
 
 
@@ -1015,7 +1033,16 @@ function doneLoading() {
       portfolioIsMoving = false;
     }
   });
+  if($portfolio.mixItUp('isLoaded')){
+    console.log("HELLO")
+}
+$portfolio.on("mixLoad", function(e, state) {
 
+    $("#portfolio").css({
+      display: "none"
+    })
+
+})
   $(".wraplab").kinetic({
     cursor: "grab",
     x: false,
@@ -1044,7 +1071,7 @@ function doneLoading() {
     $this = $(this);
     $parent = $this.parent();
 
-    which = (pm.portfolio.length) - ($parent.index());
+    which = (pm.portfolio.length-1) - ($parent.index());
     var properpos = [e.pageX, e.pageY]
     if (!portfolioIsMoving) {
       switchPage(pageType[3], which, properpos);
@@ -1063,7 +1090,7 @@ function doneLoading() {
     $mainLinks.siblings().removeClass().addClass("inactive");
     $mainLinks.first().removeClass("inactive").addClass("active");
     $mainLinks.first().addClass("blue");
-    switchPage(pageType[0], 0, null);
+    //switchPage(pageType[0], 0, null);
   });
 
   $mainLinks.on('click', function() {
@@ -1116,17 +1143,17 @@ function doneLoading() {
     event.preventDefault();
   });
 
-  $('.wraplab').mousewheel(function(event, delta) {
+  /*$('.wraplab').mousewheel(function(event, delta) {
     this.scrollTop += (delta * 50);
     event.preventDefault();
-  })
+  })*/
 
-  $('.grid').masonry({
+/*  $('.grid').masonry({
     // options
     itemSelector: '.grid-item',
     columnWidth: 200,
     gutter: 20
-  });
+  });*/
 
 }
 
@@ -1182,18 +1209,18 @@ $('.wrapcase > .bottom > .righty').on('click', function() {
   } else {
     currentCase = pm.portfolio.length - 1;
   }
-  console.log(currentCase)
   switchCase(currentCase);
 });
 
 $('.wrapcase > .bottom > .lefty').on('click', function() {
   if (currentCase < pm.portfolio.length - 1) {
     currentCase++;
+    switchCase(currentCase);
   } else {
-    currentCase = 0;
+    //currentCase = 0;
   }
-  console.log(currentCase)
-  switchCase(currentCase);
+
+
 });
 
 $(document).ready(function() {
